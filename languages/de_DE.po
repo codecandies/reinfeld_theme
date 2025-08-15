@@ -1,0 +1,57 @@
+# German translation for Reinfeld Theme
+# Copyright (C) 2025 Reinfeld Theme
+# This file is distributed under the same license as the Reinfeld Theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Reinfeld Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-15 00:00+0000\n"
+"PO-Revision-Date: 2025-08-15 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: German\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Manual\n"
+
+#: header.php:24
+msgid "Skip to content"
+msgstr "Zum Inhalt springen"
+
+#: template-parts/avatar-svg.php:11
+msgid "Avatar von Nico Brünjes"
+msgstr "Avatar von Nico Brünjes"
+
+#: template-parts/theme-toggle.php:13
+msgid "Choose color theme:"
+msgstr "Farbschema wählen:"
+
+#: template-parts/theme-toggle.php:16
+msgid "Light"
+msgstr "Hell"
+
+#: template-parts/theme-toggle.php:19
+msgid "Auto"
+msgstr "Auto"
+
+#: template-parts/theme-toggle.php:22
+msgid "Dark"
+msgstr "Dunkel"
+
+#: template-parts/theme-toggle.php:46
+msgid "Helles Design aktivieren"
+msgstr "Helles Design aktivieren"
+
+#: template-parts/theme-toggle.php:47
+msgid "Automatisches Design basierend auf Systemeinstellungen"
+msgstr "Automatisches Design basierend auf Systemeinstellungen"
+
+#: template-parts/theme-toggle.php:48
+msgid "Dunkles Design aktivieren"
+msgstr "Dunkles Design aktivieren"
+
+#: template-parts/rss-link.php:13
+msgid "Link to RSS feed"
+msgstr "Link zum RSS-Feed"

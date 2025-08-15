@@ -1,0 +1,57 @@
+# Reinfeld Theme
+# Copyright (C) 2025 Reinfeld Theme
+# This file is distributed under the same license as the Reinfeld Theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Reinfeld Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-15 00:00+0000\n"
+"PO-Revision-Date: 2025-08-15 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Manual\n"
+
+#: header.php:24
+msgid "Skip to content"
+msgstr ""
+
+#: template-parts/avatar-svg.php:11
+msgid "Avatar von Nico Brünjes"
+msgstr ""
+
+#: template-parts/theme-toggle.php:13
+msgid "Choose color theme:"
+msgstr ""
+
+#: template-parts/theme-toggle.php:16
+msgid "Light"
+msgstr ""
+
+#: template-parts/theme-toggle.php:19
+msgid "Auto"
+msgstr ""
+
+#: template-parts/theme-toggle.php:22
+msgid "Dark"
+msgstr ""
+
+#: template-parts/theme-toggle.php:46
+msgid "Helles Design aktivieren"
+msgstr ""
+
+#: template-parts/theme-toggle.php:47
+msgid "Automatisches Design basierend auf Systemeinstellungen"
+msgstr ""
+
+#: template-parts/theme-toggle.php:48
+msgid "Dunkles Design aktivieren"
+msgstr ""
+
+#: template-parts/rss-link.php:13
+msgid "Link to RSS feed"
+msgstr ""

@@ -55,3 +55,115 @@ msgstr ""
 #: template-parts/rss-link.php:13
 msgid "Link to RSS feed"
 msgstr ""
+
+#: template-parts/main-navigation.php:11
+msgid "Main Navigation"
+msgstr ""
+
+#: template-parts/main-navigation.php:12
+msgid "Overview"
+msgstr ""
+
+#: template-parts/main-navigation.php:19
+msgid "Github"
+msgstr ""
+
+#: template-parts/main-navigation.php:25
+msgid "Bluesky"
+msgstr ""
+
+#: template-parts/main-navigation.php:31
+msgid "Mastodon"
+msgstr ""
+
+#: template-parts/about-section.php:17
+msgid "Hi, my name is Nico, and I work as a team-leading senior frontend developer for a large publishing house in Hamburg, Germany.&nbsp;%s"
+msgstr ""
+
+#: template-parts/about-section.php:22
+msgid "Continue reading"
+msgstr ""
+
+#: template-parts/webring-navigation.php:20
+msgid "Previous"
+msgstr ""
+
+#: template-parts/webring-navigation.php:23
+msgid "Random"
+msgstr ""
+
+#: template-parts/webring-navigation.php:26
+msgid "Next"
+msgstr ""
+
+#: template-parts/colophon.php:21
+msgid "© %1$s %2$s, all texts under %3$s"
+msgstr ""
+
+#: inc/customizer.php:24
+msgid "Social Media Links"
+msgstr ""
+
+#: inc/customizer.php:39
+msgid "GitHub URL"
+msgstr ""
+
+#: inc/customizer.php:52
+msgid "Bluesky URL"
+msgstr ""
+
+#: inc/customizer.php:65
+msgid "Mastodon URL"
+msgstr ""
+
+#: inc/customizer.php:78
+msgid "About Section"
+msgstr ""
+
+#: inc/customizer.php:92
+msgid "About Text"
+msgstr ""
+
+#: inc/customizer.php:105
+msgid "About Page URL"
+msgstr ""
+
+#: inc/customizer.php:118
+msgid "Webring Settings"
+msgstr ""
+
+#: inc/customizer.php:131
+msgid "Enable Webring Navigation"
+msgstr ""
+
+#: inc/customizer.php:144
+msgid "Webring Name"
+msgstr ""
+
+#: inc/customizer.php:157
+msgid "Webring Base URL"
+msgstr ""
+
+#: inc/customizer.php:170
+msgid "Copyright Settings"
+msgstr ""
+
+#: inc/customizer.php:183
+msgid "Start Year"
+msgstr ""
+
+#: inc/customizer.php:196
+msgid "Custom Copyright Text"
+msgstr ""
+
+#: inc/customizer.php:197
+msgid "Leave empty to use automatic copyright text"
+msgstr ""
+
+#: inc/customizer.php:210
+msgid "License URL"
+msgstr ""
+
+#: inc/customizer.php:223
+msgid "License Text"
+msgstr ""

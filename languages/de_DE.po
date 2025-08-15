@@ -55,3 +55,115 @@ msgstr "Dunkles Design aktivieren"
 #: template-parts/rss-link.php:13
 msgid "Link to RSS feed"
 msgstr "Link zum RSS-Feed"
+
+#: template-parts/main-navigation.php:11
+msgid "Main Navigation"
+msgstr "Hauptnavigation"
+
+#: template-parts/main-navigation.php:12
+msgid "Overview"
+msgstr "Übersicht"
+
+#: template-parts/main-navigation.php:19
+msgid "Github"
+msgstr "Github"
+
+#: template-parts/main-navigation.php:25
+msgid "Bluesky"
+msgstr "Bluesky"
+
+#: template-parts/main-navigation.php:31
+msgid "Mastodon"
+msgstr "Mastodon"
+
+#: template-parts/about-section.php:17
+msgid "Hi, my name is Nico, and I work as a team-leading senior frontend developer for a large publishing house in Hamburg, Germany.&nbsp;%s"
+msgstr "Hallo, mein Name ist Nico und ich arbeite als leitender Senior Frontend-Entwickler für ein großes Verlagshaus in Hamburg.&nbsp;%s"
+
+#: template-parts/about-section.php:22
+msgid "Continue reading"
+msgstr "Weiterlesen"
+
+#: template-parts/webring-navigation.php:20
+msgid "Previous"
+msgstr "Vorherige"
+
+#: template-parts/webring-navigation.php:23
+msgid "Random"
+msgstr "Zufällig"
+
+#: template-parts/webring-navigation.php:26
+msgid "Next"
+msgstr "Nächste"
+
+#: template-parts/colophon.php:21
+msgid "© %1$s %2$s, all texts under %3$s"
+msgstr "© %1$s %2$s, alle Texte unter %3$s"
+
+#: inc/customizer.php:24
+msgid "Social Media Links"
+msgstr "Social Media Links"
+
+#: inc/customizer.php:39
+msgid "GitHub URL"
+msgstr "GitHub URL"
+
+#: inc/customizer.php:52
+msgid "Bluesky URL"
+msgstr "Bluesky URL"
+
+#: inc/customizer.php:65
+msgid "Mastodon URL"
+msgstr "Mastodon URL"
+
+#: inc/customizer.php:78
+msgid "About Section"
+msgstr "Über-Bereich"
+
+#: inc/customizer.php:92
+msgid "About Text"
+msgstr "Über-Text"
+
+#: inc/customizer.php:105
+msgid "About Page URL"
+msgstr "Über-Seite URL"
+
+#: inc/customizer.php:118
+msgid "Webring Settings"
+msgstr "Webring-Einstellungen"
+
+#: inc/customizer.php:131
+msgid "Enable Webring Navigation"
+msgstr "Webring-Navigation aktivieren"
+
+#: inc/customizer.php:144
+msgid "Webring Name"
+msgstr "Webring-Name"
+
+#: inc/customizer.php:157
+msgid "Webring Base URL"
+msgstr "Webring Basis-URL"
+
+#: inc/customizer.php:170
+msgid "Copyright Settings"
+msgstr "Copyright-Einstellungen"
+
+#: inc/customizer.php:183
+msgid "Start Year"
+msgstr "Startjahr"
+
+#: inc/customizer.php:196
+msgid "Custom Copyright Text"
+msgstr "Benutzerdefinierter Copyright-Text"
+
+#: inc/customizer.php:197
+msgid "Leave empty to use automatic copyright text"
+msgstr "Leer lassen für automatischen Copyright-Text"
+
+#: inc/customizer.php:210
+msgid "License URL"
+msgstr "Lizenz-URL"
+
+#: inc/customizer.php:223
+msgid "License Text"
+msgstr "Lizenz-Text"

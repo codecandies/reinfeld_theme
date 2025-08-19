@@ -74,6 +74,29 @@ html:has(#mode-switcher input[value="dark"]:checked) {
   }
 }
 
+/* screen reader text */
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  border: 0;
+}
+
+.screen-reader-text:focus-visible {
+  clip: auto;
+  clip-path: none;
+  width: auto;
+  height: auto;
+  padding: 0.5rem;
+  margin: 0;
+  overflow: visible;
+}
+
 /* Base styles */
 
 html,

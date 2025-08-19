@@ -4,7 +4,22 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Reinfeld Theme 1.0.0\n"
-"Report-Msgid-Bugs-To: \n"
+#: template-parts/content-none.php:22
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: template-parts/content-single.php:45
+#: template-parts/content.php:11
+msgid "Continue reading"
+msgstr ""
+
+#: template-parts/content-single.php:70
+msgid "Navigate between posts"
+msgstr ""
+
+#: template-parts/content-single.php:94
+msgid "Related Posts"
+msgstr ""port-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 00:00+0000\n"
 "PO-Revision-Date: 2025-08-15 00:00+0000\n"
 "Last-Translator: \n"
@@ -166,4 +181,48 @@ msgstr ""
 
 #: inc/customizer.php:223
 msgid "License Text"
+msgstr ""
+
+#: index.php:51
+msgid "Continue reading"
+msgstr ""
+
+#: index.php:57
+msgid "Navigate to newer and older articles"
+msgstr ""
+
+#: index.php:59
+msgid "Newer"
+msgstr ""
+
+#: index.php:62
+msgid "Older"
+msgstr ""
+
+#: template-parts/content-none.php:12
+msgid "Nothing here"
+msgstr ""
+
+#: template-parts/content-none.php:18
+msgid "Ready to publish your first post? <a href=\"%s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:30
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:35
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
+
+#: template-parts/content.php:47
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: template-parts/content.php:58
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content.php:85
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""

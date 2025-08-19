@@ -167,3 +167,48 @@ msgstr "Lizenz-URL"
 #: inc/customizer.php:223
 msgid "License Text"
 msgstr "Lizenz-Text"
+
+#: index.php:51
+msgid "Continue reading"
+msgstr "Weiterlesen"
+
+#: index.php:57
+msgid "Navigate to newer and older articles"
+msgstr "Zu neueren und älteren Artikeln navigieren"
+
+#: index.php:59
+msgid "Newer"
+msgstr "Neuere"
+
+#: index.php:62
+msgid "Older"
+msgstr "Ältere"
+
+#: template-parts/content-none.php:12
+msgid "Nothing here"
+msgstr "Nichts gefunden"
+
+#: template-parts/content-none.php:18
+msgid "Ready to publish your first post? <a href=\"%s\">Get started here</a>."
+msgstr "Bereit, Ihren ersten Beitrag zu veröffentlichen? <a href=\"%s\">Hier geht's los</a>."
+
+#: template-parts/content-none.php:30
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Leider entspricht nichts Ihren Suchbegriffen. Versuchen Sie es bitte mit anderen Schlüsselwörtern."
+
+#: template-parts/content-none.php:35
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Wir können nicht finden, wonach Sie suchen. Vielleicht hilft die Suche."
+
+#: template-parts/content-single.php:45
+#: template-parts/content.php:11
+msgid "Continue reading"
+msgstr "Weiterlesen"
+
+#: template-parts/content-single.php:70
+msgid "Navigate between posts"
+msgstr "Zwischen Artikeln navigieren"
+
+#: template-parts/content-single.php:94
+msgid "Related Posts"
+msgstr "Ähnliche Artikel"

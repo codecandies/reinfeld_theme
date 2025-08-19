@@ -167,3 +167,47 @@ msgstr "License URL"
 #: inc/customizer.php:223
 msgid "License Text"
 msgstr "License Text"
+
+#: index.php:51
+msgid "Continue reading"
+msgstr "Continue reading"
+
+#: index.php:57
+msgid "Navigate to newer and older articles"
+msgstr "Navigate to newer and older articles"
+
+#: index.php:59
+msgid "Newer"
+msgstr "Newer"
+
+#: index.php:62
+msgid "Older"
+msgstr "Older"
+
+#: template-parts/content-none.php:12
+msgid "Nothing here"
+msgstr "Nothing here"
+
+#: template-parts/content-none.php:18
+msgid "Ready to publish your first post? <a href=\"%s\">Get started here</a>."
+msgstr "Ready to publish your first post? <a href=\"%s\">Get started here</a>."
+
+#: template-parts/content-none.php:30
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+
+#: template-parts/content-none.php:35
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+
+#: template-parts/content.php:47
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: template-parts/content.php:58
+msgid "Pages:"
+msgstr "Pages:"
+
+#: template-parts/content.php:85
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"

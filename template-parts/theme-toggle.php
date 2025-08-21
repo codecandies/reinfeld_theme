@@ -7,6 +7,7 @@
  */
 ?>
 
+<!-- theme-toggle.php -->
 <div class="theme">
   <div class="toggle-container">
     <fieldset class="toggle-fieldset" id="mode-switcher">

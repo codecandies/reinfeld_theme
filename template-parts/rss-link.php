@@ -7,6 +7,7 @@
  */
 ?>
 
+<!-- rss-link.php -->
 <div class="rsslink">
   <a href="<?php echo esc_url(get_feed_link()); ?>">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" role="img">

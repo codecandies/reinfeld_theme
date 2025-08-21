@@ -10,7 +10,7 @@
 
 get_header();
 ?>
-
+<!-- index.php -->
 <?php if (have_posts()) : ?>
 
   <?php

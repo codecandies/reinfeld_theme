@@ -6,7 +6,7 @@
  * @package Reinfeld
  */
 ?>
-
+<!-- webring-navigation.php -->
 <nav class="webring" aria-labelledby="webring">
   <p id="webring"><?php esc_html_e('CSS JOY Webring:', 'reinfeld'); ?></p>
   <a href="https://webri.ng/webring/cssjoy/previous?via=<?php echo esc_url(home_url('/')); ?>" target="_blank" rel="noopener">

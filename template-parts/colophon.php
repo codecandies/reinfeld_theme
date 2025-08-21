@@ -6,7 +6,7 @@
  * @package Reinfeld
  */
 ?>
-
+<!-- colophon.php -->
 <div class="colophon">
   <?php
   // Get copyright information from customizer or use defaults

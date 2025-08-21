@@ -7,6 +7,7 @@
  */
 ?>
 
+<!-- about-section.php -->
 <aside class="about">
   <?php
   // Get about text from customizer or use default

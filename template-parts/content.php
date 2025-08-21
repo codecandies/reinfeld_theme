@@ -7,7 +7,7 @@
  */
 
 ?>
-
+<!-- content.php -->
 <h3><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 <p>
   <?php
@@ -42,4 +42,3 @@
     ?>
   </footer>
 <?php endif; ?>
-</article>

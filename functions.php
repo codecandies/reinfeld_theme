@@ -61,7 +61,11 @@ add_action('after_setup_theme', 'reinfeld_content_width', 0);
  */
 function reinfeld_scripts()
 {
-  wp_enqueue_style('reinfeld-style', get_stylesheet_uri(), array(), REINFELD_VERSION);
+  // Enqueue fonts first
+  wp_enqueue_style('reinfeld-fonts', get_template_directory_uri() . '/assets/css/fonts.css', array(), REINFELD_VERSION);
+
+  // Enqueue main stylesheet (depends on fonts)
+  wp_enqueue_style('reinfeld-style', get_stylesheet_uri(), array('reinfeld-fonts'), REINFELD_VERSION);
 }
 add_action('wp_enqueue_scripts', 'reinfeld_scripts');
 

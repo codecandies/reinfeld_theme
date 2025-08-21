@@ -8,55 +8,53 @@
 
 ?>
 
-<main class="article">
-  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <h1><?php the_title(); ?></h1>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <h1><?php the_title(); ?></h1>
 
-    <div class="meta">
-      <time datetime="<?php echo esc_attr(get_the_date('c')); ?>">
-        <?php echo esc_html(get_the_date()); ?>
-      </time>
-      <?php if (has_category()) : ?>
-        <span class="categories">
-          <?php the_category(', '); ?>
-        </span>
-      <?php endif; ?>
-    </div>
-
-    <div class="entry-content">
-      <?php
-      the_content();
-
-      wp_link_pages(array(
-        'before' => '<div class="page-links">' . esc_html__('Pages:', 'reinfeld'),
-        'after'  => '</div>',
-      ));
-      ?>
-    </div>
-
-    <?php if (get_edit_post_link()) : ?>
-      <footer class="entry-footer">
-        <?php
-        edit_post_link(
-          sprintf(
-            wp_kses(
-              /* translators: %s: Name of current post. Only visible to screen readers */
-              __('Edit <span class="screen-reader-text">%s</span>', 'reinfeld'),
-              array(
-                'span' => array(
-                  'class' => array(),
-                ),
-              )
-            ),
-            get_the_title()
-          ),
-          '<span class="edit-link">',
-          '</span>'
-        );
-        ?>
-      </footer>
+  <div class="meta">
+    <time datetime="<?php echo esc_attr(get_the_date('c')); ?>">
+      <?php echo esc_html(get_the_date()); ?>
+    </time>
+    <?php if (has_category()) : ?>
+      <span class="categories">
+        <?php the_category(', '); ?>
+      </span>
     <?php endif; ?>
-  </article>
+  </div>
+
+  <div class="entry-content">
+    <?php
+    the_content();
+
+    wp_link_pages(array(
+      'before' => '<div class="page-links">' . esc_html__('Pages:', 'reinfeld'),
+      'after'  => '</div>',
+    ));
+    ?>
+  </div>
+
+  <?php if (get_edit_post_link()) : ?>
+    <footer class="entry-footer">
+      <?php
+      edit_post_link(
+        sprintf(
+          wp_kses(
+            /* translators: %s: Name of current post. Only visible to screen readers */
+            __('Edit <span class="screen-reader-text">%s</span>', 'reinfeld'),
+            array(
+              'span' => array(
+                'class' => array(),
+              ),
+            )
+          ),
+          get_the_title()
+        ),
+        '<span class="edit-link">',
+        '</span>'
+      );
+      ?>
+    </footer>
+  <?php endif; ?>
 
   <?php
   // Navigation zwischen Posts
@@ -108,4 +106,4 @@
     comments_template();
   endif;
   ?>
-</main>
+  </main>

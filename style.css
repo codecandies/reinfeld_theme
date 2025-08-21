@@ -549,11 +549,11 @@ blockquote p:last-child::after {
 }
 
 /* Footer */
-footer {
+.page>footer {
   background: var(--header-bg-end);
 }
 
-footer p {
+.page>footer p {
   margin: 0;
 }
 

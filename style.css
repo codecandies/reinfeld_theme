@@ -672,15 +672,22 @@ blockquote p:last-child::after {
 
 /* Related Posts */
 .related-posts {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.related-posts ul {
-  list-style: none;
-  padding: 0;
+.related-posts div {
+  background-image: url('http://localhost/wp-content/uploads/2025/08/no_picture.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  aspect-ratio: 32/20;
+}
+
+.related-posts div>img {
+  object-fit: cover;
+  width: 100%;
 }
 
 .related-posts h2 {

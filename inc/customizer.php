@@ -33,6 +33,37 @@ function reinfeld_customize_register($wp_customize)
     );
   }
 
+  // Theme Options
+  $wp_customize->add_section(
+    'reinfeld_options',
+    array(
+      'title'    => __('Theme Options', 'reinfeld'),
+      'priority' => 120,
+    )
+  );
+
+  // Hide related posts
+  $wp_customize->add_setting(
+    'reinfeld_hide_related_posts',
+    array(
+      'capability'     => 'edit_theme_options',
+      'sanitize_callback' => 'reinfeld_sanitize_checkbox',
+      'transport'      => 'postMessage',
+    )
+  );
+
+  $wp_customize->add_control(
+    'reinfeld_hide_related_posts',
+    array(
+      'type'       => 'checkbox',
+      'section'     => 'reinfeld_options',
+      'label'     => __('Hide Related Posts', 'reinfeld'),
+      'description'   => __('Whether to hide the related posts section on single posts.', 'reinfeld'),
+    )
+  );
+
+
+
   // Social Media Section
   $wp_customize->add_section(
     'reinfeld_social_media',

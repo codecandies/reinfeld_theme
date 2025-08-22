@@ -672,15 +672,15 @@ blockquote p:last-child::after {
 
 /* Related Posts */
 .related-posts {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.related-posts ul {
-  list-style: none;
-  padding: 0;
+.related-posts div>img {
+  aspect-ratio: 32/20;
+  object-fit: cover;
+  width: 100%;
 }
 
 .related-posts h2 {

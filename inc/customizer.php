@@ -62,6 +62,29 @@ function reinfeld_customize_register($wp_customize)
     )
   );
 
+  // Fallback Post Thumbnail
+  $wp_customize->add_setting(
+    'reinfeld_fallback_thumbnail',
+    array(
+      'capability'     => 'edit_theme_options',
+      'sanitize_callback' => 'absint',
+      'transport'      => 'postMessage',
+    )
+  );
+
+  $wp_customize->add_control(
+    new WP_Customize_Media_Control(
+      $wp_customize,
+      'reinfeld_fallback_thumbnail',
+      array(
+        'label'       => __('Fallback Post Thumbnail', 'reinfeld'),
+        'description' => __('Select a fallback image to use when posts don\'t have a featured image.', 'reinfeld'),
+        'section'     => 'reinfeld_options',
+        'mime_type'   => 'image',
+      )
+    )
+  );
+
 
 
   // Social Media Section

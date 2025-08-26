@@ -212,3 +212,23 @@ msgstr "Zwischen Artikeln navigieren"
 #: template-parts/content-single.php:94
 msgid "Related Posts"
 msgstr "Ähnliche Artikel"
+
+#: inc/customizer.php:40
+msgid "Theme Options"
+msgstr "Theme-Optionen"
+
+#: inc/customizer.php:60
+msgid "Hide Related Posts"
+msgstr "Ähnliche Artikel ausblenden"
+
+#: inc/customizer.php:61
+msgid "Whether to hide the related posts section on single posts."
+msgstr "Ob der Bereich für ähnliche Artikel bei einzelnen Beiträgen ausgeblendet werden soll."
+
+#: inc/customizer.php:73
+msgid "Fallback Post Thumbnail"
+msgstr "Standard-Beitragsbild"
+
+#: inc/customizer.php:74
+msgid "Select a fallback image to use when posts don't have a featured image."
+msgstr "Wählen Sie ein Standard-Bild aus, das verwendet wird, wenn Beiträge kein Beitragsbild haben."

@@ -226,3 +226,23 @@ msgstr ""
 #: template-parts/content.php:85
 msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
+
+#: inc/customizer.php:40
+msgid "Theme Options"
+msgstr ""
+
+#: inc/customizer.php:60
+msgid "Hide Related Posts"
+msgstr ""
+
+#: inc/customizer.php:61
+msgid "Whether to hide the related posts section on single posts."
+msgstr ""
+
+#: inc/customizer.php:73
+msgid "Fallback Post Thumbnail"
+msgstr ""
+
+#: inc/customizer.php:74
+msgid "Select a fallback image to use when posts don't have a featured image."
+msgstr ""

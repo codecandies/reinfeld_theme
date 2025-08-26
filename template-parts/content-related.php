@@ -68,8 +68,20 @@ if ($related_posts):
           <div>
             <?php if (isset($image)): ?>
               <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr(get_the_title($post)); ?>">
-            <?php else: ?>
-              <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/no-image.png'); ?>" alt="<?php echo esc_attr(get_the_title($post)); ?>">
+            <?php else:
+              $fallback_thumbnail_id = get_theme_mod('reinfeld_fallback_thumbnail');
+              if ($fallback_thumbnail_id) {
+                $fallback_image = wp_get_attachment_image_src($fallback_thumbnail_id, 'reinfeld_list-image');
+                if ($fallback_image) {
+                  $fallback_image_url = $fallback_image[0];
+                } else {
+                  $fallback_image_url = get_template_directory_uri() . '/assets/img/no-image.png';
+                }
+              } else {
+                $fallback_image_url = get_template_directory_uri() . '/assets/img/no-image.png';
+              }
+            ?>
+              <img src="<?php echo esc_url($fallback_image_url); ?>" alt="<?php echo esc_attr(get_the_title($post)); ?>">
             <?php endif; ?>
           </div>
           <h2>

@@ -6,7 +6,7 @@ $next_post = get_next_post();
 if ($prev_post || $next_post) : ?>
   <!-- content-prevnext.php -->
   <section aria-labelledby="prev-next-posts-title" class="article-extension">
-    <h1 id="prev-next-posts-title"><?php esc_html_e('Next posts', 'reinfeld'); ?></h1>
+    <h2 id="prev-next-posts-title"><?php esc_html_e('Next posts', 'reinfeld'); ?></h2>
     <div class="prev-next-posts">
       <?php if ($prev_post) : ?>
         <div class="prev">

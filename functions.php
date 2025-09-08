@@ -107,3 +107,76 @@ endif;
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+
+if (! function_exists('reinfeld_comment')) :
+  function reinfeld_comment($comment, $args, $depth)
+  {
+
+    switch ($comment->comment_type):
+      case 'pingback':
+      case 'trackback':
+      case 'ping':
+      case 'like':
+      case 'repost':
+        global $post;
+?>
+
+        <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+          <?php echo get_avatar($comment, 50, 'robohash'); ?>
+          <?php echo ucfirst($comment->comment_type) . ' ' . __('from', 'reinfeld') . ' ' . get_comment_author_link(); ?>
+
+        <?php
+
+        break;
+
+      default:
+        global $post;
+        ?>
+        <li id="li-comment-<?php comment_ID(); ?>">
+
+          <article id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
+            <header class="comment-meta">
+              <div class="comment-avatar">
+                <?php echo get_avatar($comment, 50, 'robohash'); ?>
+              </div>
+
+              <div class="comment-author">
+                <cite><?php echo get_comment_author_link(); ?></cite>
+                <?php if ($comment->user_id === $post->post_author) {
+                  echo ' (' . __('Author', 'reinfeld') . ')';
+                } ?>
+              </div>
+
+              <div class="comment-metadata">
+                <span class="comment-date">
+                  <a class="comment-date-link" href="<?php echo esc_url(get_comment_link($comment->comment_ID)) ?>" title="<?php echo get_comment_date() . ' ' . __('at', 'reinfeld') . ' ' . get_comment_time(); ?>"><?php echo get_comment_date(get_option('date_format')); ?></a>
+                </span>
+              </div>
+            </header>
+
+            <div class="comment-content entry-content">
+              <?php comment_text(); ?>
+            </div><!-- .comment-content -->
+
+            <footer class="comment-footer">
+              <?php
+              comment_reply_link(array(
+                'after'      => '</span>',
+                'before'    => '<span class="comment-reply">',
+                'depth'      => $depth,
+                'max_depth'   => $args['max_depth'],
+                'reply_text'   => __('Reply', 'reinfeld'),
+              ));
+              ?>
+              <?php if ('0' == $comment->comment_approved) : ?>
+                <span class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.', 'reinfeld'); ?></p>
+                <?php endif; ?>
+            </footer>
+          </article><!-- .comment -->
+
+  <?php
+        break;
+    endswitch;
+  }
+endif; // End if().

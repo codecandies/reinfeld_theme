@@ -55,7 +55,7 @@ if ($related_posts):
   global $post;
 ?>
   <section aria-labeledby="related-posts-title" class="article-extension">
-    <h1 id="related-posts-title"><?php esc_html_e('Related Posts', 'reinfeld'); ?></h1>
+    <h2 id="related-posts-title"><?php esc_html_e('Related Posts', 'reinfeld'); ?></h2>
     <div class="related-posts">
       <?php foreach ($related_posts as $post):
         setup_postdata($post);

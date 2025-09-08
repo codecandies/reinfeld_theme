@@ -363,7 +363,7 @@ main {
   grid-template-columns:
     minmax(1.5rem, 1fr) minmax(auto, var(--column-width)) minmax(1.5rem, 1fr);
   margin: 0;
-  padding: 2.5rem;
+  padding: 2.5rem 0;
 }
 
 main b,

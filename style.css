@@ -760,7 +760,15 @@ button:hover {
 }
 
 /* Comments */
-.comments {
+.comment-list,
+.commnt-list ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* .comments {
   counter-reset: comments;
 }
 
@@ -786,4 +794,4 @@ button:hover {
 
 .comment header cite::after {
   content: "– ";
-}
+} */

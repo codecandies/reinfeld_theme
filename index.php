@@ -44,6 +44,11 @@ get_header();
             </a>
           </h3>
         </header>
+        <?php if (get_comments_number() > 0) : ?>
+          <footer class="entry-meta">
+            <?php comments_number(__('No comments', 'reinfeld'), __('One comment', 'reinfeld'), __('% comments', 'reinfeld')); ?>
+          </footer>
+        <?php endif; ?>
 
         <div class="entry-summary">
           <?php

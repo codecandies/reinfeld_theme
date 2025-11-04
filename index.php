@@ -57,7 +57,7 @@ get_header();
           if ($excerpt) {
             echo '<p>' . esc_html($excerpt);
             // Add continue reading link
-            echo '&nbsp;<a class="continue ui-button" href="' . esc_url(get_permalink()) . '" aria-hidden="true" tabindex="-1">' . esc_html__('Continue reading', 'reinfeld') . '</a>';
+            echo '&nbsp;<a class="continue ui-button" href="' . esc_url(get_permalink()) . '" aria-hidden="true" tabindex="-1">' . esc_html__('Continue&nbsp;reading', 'reinfeld') . '</a>';
             echo '</p>';
           }
           ?>

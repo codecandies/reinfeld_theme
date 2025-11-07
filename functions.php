@@ -123,9 +123,11 @@ if (! function_exists('reinfeld_comment')) :
 ?>
 
         <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-          <?php echo get_avatar($comment, 50, 'robohash'); ?>
-          <?php echo ucfirst($comment->comment_type) . ' ' . __('from', 'reinfeld') . ' ' . get_comment_author_link(); ?>
-
+          <article <?php comment_class('comment'); ?>>
+            <div class="comment-short">
+              <?php echo ucfirst($comment->comment_type) . ' ' . __('from', 'reinfeld') . ' ' . get_comment_author_link(); ?>
+            </div>
+          </article>
         <?php
 
         break;

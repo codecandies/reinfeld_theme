@@ -918,7 +918,7 @@ button:hover {
 }
 
 /* inline comment response */
-.comment + .comment-respond {
+.comment+.comment-respond {
   display: grid;
   gap: 0 1.875rem;
   grid-auto-rows: min-content;
@@ -926,7 +926,7 @@ button:hover {
   padding-bottom: 1.875rem;
 }
 
-.comment + .comment-respond > * {
+.comment+.comment-respond>* {
   grid-column: 2;
 }
 

@@ -37,7 +37,7 @@
               <use xlink:href="#c" />
             </mask>
             <use fill="#B7C1DB" xlink:href="#c" />
-            <g mask="url(#d)" fill="#FF5C5C">
+            <g mask="url(#d)" fill="var(--shirt, #FF5C5C)">
               <rect width="264" height="110" />
             </g>
             <path d="M102 61.74V110h-7V58.15a64.54 64.54 0 0 0 7 3.59Zm67-3.59V98.5a3.5 3.5 0 1 1-7 0V61.74a64.54 64.54 0 0 0 7-3.59Z" fill="#F4F4F4" mask="url(#d)" />

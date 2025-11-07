@@ -49,6 +49,13 @@ Domain Path:  /languages
   --ui-font: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --column-width: 41.25rem;
+  --head-space: 128px;
+  --adminbar-height: 0px;
+  --shirt: light-dark(#FF5C5C, #a01a1a);
+}
+
+body:has(>#wpadminbar) {
+  --adminbar-height: 32px;
 }
 
 html {
@@ -65,6 +72,16 @@ html:has(#mode-switcher input[value="auto"]:checked) {
 
 html:has(#mode-switcher input[value="dark"]:checked) {
   color-scheme: dark;
+}
+
+html:has(#mode-switcher input[value="dark"]:checked) img {
+  filter: grayscale(100%) brightness(80%);
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(:has(#mode-switcher input[value="light"]:checked)) img {
+    filter: grayscale(100%) brightness(80%);
+  }
 }
 
 /* Reduced motion support */
@@ -153,6 +170,7 @@ body {
       var(--header-bg-start),
       var(--header-bg-end));
   display: flex;
+  height: var(--head-space);
   justify-content: space-between;
   margin: 0;
   padding: 10px clamp(1.5rem, 5.9vw, 500px) 0;
@@ -366,14 +384,28 @@ main {
   padding: 2.5rem 0;
 }
 
+main.article>article {
+  display: grid;
+  grid-column: 1/4;
+  grid-template-columns: subgrid;
+  grid-template-rows: auto;
+}
+
+/* main grid & article subgrid placement */
+main>*,
+main.article>article>* {
+  grid-column: 2;
+}
+
 main b,
 main strong {
   font-weight: 600;
 }
 
-main>* {
-  grid-column: 2;
+main img {
+  filter: grayscale(var(--grayscale)) brightness(var(--brightness));
 }
+
 
 @media screen and (min-width: 62.5em) {
   .archive {
@@ -496,6 +528,7 @@ a.continue {
 
 /* Article meta */
 .meta {
+  color: var(--body-color);
   display: flex;
   font-family: "Overpass", sans-serif;
   font-optical-sizing: auto;
@@ -520,6 +553,63 @@ a.continue {
 
 .article>header {
   margin-bottom: 30px;
+}
+
+.article-image {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  width: 100vw;
+}
+
+.entry-image-wrapper {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* fullwidth article */
+article.fullwidth {
+  margin-top: -2.5rem;
+}
+
+article.fullwidth figure.entry-image-wrapper,
+article.fullwidth>header {
+  grid-row: 1;
+}
+
+article.fullwidth>header {
+  align-self: end;
+  display: flex;
+  flex-direction: column;
+  padding-block: 1.5rem;
+  z-index: 1;
+}
+
+article.fullwidth>header {
+  color-scheme: dark;
+}
+
+article.fullwidth figure.entry-image-wrapper {
+  grid-column: 1/4;
+  position: relative;
+  width: 100%;
+}
+
+article.fullwidth .article-image {
+  height: 100vh;
+  max-height: calc(100vh - var(--head-space) - var(--adminbar-height) - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0));
+}
+
+article.fullwidth figure.entry-image-wrapper::after {
+  background-image: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 37%);
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
 }
 
 /* Code styling */

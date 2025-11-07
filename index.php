@@ -50,18 +50,14 @@ get_header();
           </footer>
         <?php endif; ?>
 
-        <div class="entry-summary">
-          <?php
-          // Get excerpt or truncated content
-          $excerpt = get_the_excerpt();
+        <?php 
+          $excerpt = has_excerpt() ? get_the_excerpt() : wp_trim_words(get_the_excerpt(), 55, '...');
           if ($excerpt) {
             echo '<p>' . esc_html($excerpt);
-            // Add continue reading link
             echo '&nbsp;<a class="continue ui-button" href="' . esc_url(get_permalink()) . '" aria-hidden="true" tabindex="-1">' . esc_html__('Continue&nbsp;reading', 'reinfeld') . '</a>';
             echo '</p>';
           }
-          ?>
-        </div>
+        ?>
       </article>
 
   <?php

@@ -437,6 +437,15 @@ main p {
   line-height: 1.6;
 }
 
+.teaser-image {
+  aspect-ratio: 66/42;
+  margin-block: 1.2rem 0;
+  max-height: 420px;
+  object-fit: cover;
+  object-position: bottom;
+  width: 100%;
+}
+
 /* Archive Pagination */
 .archive-pagination {
   display: flex;

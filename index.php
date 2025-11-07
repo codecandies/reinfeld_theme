@@ -50,6 +50,12 @@ get_header();
           </footer>
         <?php endif; ?>
 
+        <?php  
+          if (has_post_thumbnail()) {
+            the_post_thumbnail('large', ['class' => 'entry-image teaser-image']);
+          }
+        ?>
+
         <?php 
           $excerpt = has_excerpt() ? get_the_excerpt() : wp_trim_words(get_the_excerpt(), 55, '...');
           if ($excerpt) {

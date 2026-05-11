@@ -56,6 +56,10 @@ msgstr "Dunkles Design aktivieren"
 msgid "Link to RSS feed"
 msgstr "Link zum RSS-Feed"
 
+#: functions.php
+msgid "Navigation (Footer)"
+msgstr "Navigation (Footer)"
+
 #: template-parts/main-navigation.php:11
 msgid "Main Navigation"
 msgstr "Hauptnavigation"
@@ -77,10 +81,13 @@ msgid "Mastodon"
 msgstr "Mastodon"
 
 #: template-parts/about-section.php:17
-msgid "Hi, my name is Nico, and I work as a team-leading senior frontend developer for a large publishing house in Hamburg, Germany.&nbsp;%s"
-msgstr "Hallo, mein Name ist Nico und ich arbeite als leitender Senior Frontend-Entwickler für ein großes Verlagshaus in Hamburg.&nbsp;%s"
+msgid "Hi, my name is Nico, and I work as a team-leading software engineer for a large publishing house in Hamburg, Germany.&nbsp;%s"
+msgstr "Hallo, mein Name ist Nico und ich arbeite als Teamlead und Software Engineer für ein großes Verlagshaus in Hamburg.&nbsp;%s"
 
 #: template-parts/about-section.php:22
+#: index.php:51
+#: template-parts/content-single.php:45
+#: template-parts/content.php:11
 msgid "Continue reading"
 msgstr "Weiterlesen"
 
@@ -168,18 +175,17 @@ msgstr "Lizenz-URL"
 msgid "License Text"
 msgstr "Lizenz-Text"
 
-#: index.php:51
-msgid "Continue reading"
-msgstr "Weiterlesen"
-
+#: archive.php:144
 #: index.php:57
 msgid "Navigate to newer and older articles"
 msgstr "Zu neueren und älteren Artikeln navigieren"
 
+#: archive.php:140
 #: index.php:59
 msgid "Newer"
 msgstr "Neuere"
 
+#: archive.php:141
 #: index.php:62
 msgid "Older"
 msgstr "Ältere"
@@ -200,18 +206,13 @@ msgstr "Leider entspricht nichts Ihren Suchbegriffen. Versuchen Sie es bitte mit
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr "Wir können nicht finden, wonach Sie suchen. Vielleicht hilft die Suche."
 
-#: template-parts/content-single.php:45
-#: template-parts/content.php:11
-msgid "Continue reading"
-msgstr "Weiterlesen"
-
 #: template-parts/content-single.php:70
 msgid "Navigate between posts"
 msgstr "Zwischen Artikeln navigieren"
 
 #: template-parts/content-single.php:94
 msgid "Related Posts"
-msgstr "Ähnliche Artikel"
+msgstr "Ähnliche Beiträge   "
 
 #: inc/customizer.php:40
 msgid "Theme Options"
@@ -232,3 +233,146 @@ msgstr "Standard-Beitragsbild"
 #: inc/customizer.php:74
 msgid "Select a fallback image to use when posts don't have a featured image."
 msgstr "Wählen Sie ein Standard-Bild aus, das verwendet wird, wenn Beiträge kein Beitragsbild haben."
+
+#: template-parts/content-prevnext.php:9
+msgid "More posts"
+msgstr "Weitere Beiträge"
+
+#: template-parts/webring-navigation.php:10
+msgid "CSS JOY Webring"
+msgstr "CSS JOY Webring"
+
+#: template-parts/webring-navigation.php:11
+msgid "CSS JOY Webring:"
+msgstr "CSS JOY Webring:"
+
+#: header.php
+msgid "Home"
+msgstr "Startseite"
+
+#: template-parts/main-navigation.php
+#: template-parts/webring-navigation.php
+msgid "(opens in new tab)"
+msgstr "(öffnet in neuem Tab)"
+
+#: template-parts/about-section.php
+msgid "the about page"
+msgstr "die Über-Seite"
+
+#: template-parts/content.php:47
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Weiterlesen<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: page.php:25
+msgid "Pages:"
+msgstr "Seiten:"
+
+#: page.php:38
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr "Bearbeiten <span class=\"screen-reader-text\">%s</span>"
+
+#: template-parts/content.php:30
+#, php-format
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Bearbeiten<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: comments.php:15
+#, php-format
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr "Ein Gedanke zu &ldquo;%s&rdquo;"
+
+#: comments.php:19
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s Gedanke zu &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s Gedanken zu &ldquo;%2$s&rdquo;"
+
+#: comments.php:44
+msgid "Comments are closed."
+msgstr "Kommentare sind geschlossen."
+
+#: functions.php:128
+msgid "from"
+msgstr "von"
+
+#: archive.php:50
+#: functions.php:149
+msgid "Author"
+msgstr "Autor"
+
+#: functions.php:155
+msgid "at"
+msgstr "um"
+
+#: functions.php:171
+msgid "Reply"
+msgstr "Antworten"
+
+#: functions.php:175
+msgid "Your comment is awaiting moderation."
+msgstr "Ihr Kommentar wartet auf Freischaltung."
+
+#: archive.php:102
+#: index.php:49
+msgid "No comments"
+msgstr "Keine Kommentare"
+
+#: archive.php:103
+#: index.php:49
+msgid "One comment"
+msgstr "Ein Kommentar"
+
+#: archive.php:104
+#: index.php:49
+msgid "% comments"
+msgstr "% Kommentare"
+
+#: archive.php:125
+#: index.php:63
+msgid "Continue&nbsp;reading"
+msgstr "Weiterlesen"
+
+#: archive.php:20
+msgid "Topic"
+msgstr "Thema"
+
+#: archive.php:23
+msgid "Person"
+msgstr "Person"
+
+#: archive.php:26
+msgid "Location"
+msgstr "Ort"
+
+#: archive.php:29
+msgid "Series"
+msgstr "Serie"
+
+#: archive.php:32
+msgid "Category"
+msgstr "Kategorie"
+
+#: archive.php:35
+#: archive.php:40
+#: archive.php:45
+msgid "Archive"
+msgstr "Archiv"
+
+#: archive.php:37
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:42
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: archive.php:47
+msgctxt "daily archives date format"
+msgid "j. F Y"
+msgstr "j. F Y"

@@ -4,22 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Reinfeld Theme 1.0.0\n"
-#: template-parts/content-none.php:22
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr ""
-
-#: template-parts/content-single.php:45
-#: template-parts/content.php:11
-msgid "Continue reading"
-msgstr ""
-
-#: template-parts/content-single.php:70
-msgid "Navigate between posts"
-msgstr ""
-
-#: template-parts/content-single.php:94
-msgid "Related Posts"
-msgstr ""port-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-15 00:00+0000\n"
 "PO-Revision-Date: 2025-08-15 00:00+0000\n"
 "Last-Translator: \n"
@@ -96,6 +81,9 @@ msgid "Hi, my name is Nico, and I work as a team-leading senior frontend develop
 msgstr ""
 
 #: template-parts/about-section.php:22
+#: index.php:51
+#: template-parts/content-single.php:45
+#: template-parts/content.php:11
 msgid "Continue reading"
 msgstr ""
 
@@ -123,12 +111,32 @@ msgstr ""
 msgid "GitHub URL"
 msgstr ""
 
+#: inc/customizer.php:40
+msgid "Theme Options"
+msgstr ""
+
 #: inc/customizer.php:52
 msgid "Bluesky URL"
 msgstr ""
 
+#: inc/customizer.php:60
+msgid "Hide Related Posts"
+msgstr ""
+
+#: inc/customizer.php:61
+msgid "Whether to hide the related posts section on single posts."
+msgstr ""
+
 #: inc/customizer.php:65
 msgid "Mastodon URL"
+msgstr ""
+
+#: inc/customizer.php:73
+msgid "Fallback Post Thumbnail"
+msgstr ""
+
+#: inc/customizer.php:74
+msgid "Select a fallback image to use when posts don't have a featured image."
 msgstr ""
 
 #: inc/customizer.php:78
@@ -183,10 +191,6 @@ msgstr ""
 msgid "License Text"
 msgstr ""
 
-#: index.php:51
-msgid "Continue reading"
-msgstr ""
-
 #: index.php:57
 msgid "Navigate to newer and older articles"
 msgstr ""
@@ -197,6 +201,22 @@ msgstr ""
 
 #: index.php:62
 msgid "Older"
+msgstr ""
+
+#: index.php:63
+msgid "Continue&nbsp;reading"
+msgstr ""
+
+#: index.php:49
+msgid "No comments"
+msgstr ""
+
+#: index.php:49
+msgid "One comment"
+msgstr ""
+
+#: index.php:49
+msgid "% comments"
 msgstr ""
 
 #: template-parts/content-none.php:12
@@ -212,37 +232,79 @@ msgid "Sorry, but nothing matched your search terms. Please try again with some 
 msgstr ""
 
 #: template-parts/content-none.php:35
+#: template-parts/content-none.php:22
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
+#: template-parts/content-single.php:70
+msgid "Navigate between posts"
+msgstr ""
+
+#: template-parts/content-single.php:94
+msgid "Related Posts"
+msgstr ""
+
 #: template-parts/content.php:47
+#, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
 #: template-parts/content.php:58
+#: page.php:25
 msgid "Pages:"
 msgstr ""
 
 #: template-parts/content.php:85
+#, php-format
 msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: inc/customizer.php:40
-msgid "Theme Options"
+#: template-parts/content-prevnext.php:9
+msgid "Next posts"
 msgstr ""
 
-#: inc/customizer.php:60
-msgid "Hide Related Posts"
+#: template-parts/webring-navigation.php:11
+msgid "CSS JOY Webring:"
 msgstr ""
 
-#: inc/customizer.php:61
-msgid "Whether to hide the related posts section on single posts."
+#: comments.php:15
+#, php-format
+msgid "One thought on &ldquo;%s&rdquo;"
 msgstr ""
 
-#: inc/customizer.php:73
-msgid "Fallback Post Thumbnail"
+#: comments.php:19
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:44
+msgid "Comments are closed."
 msgstr ""
 
-#: inc/customizer.php:74
-msgid "Select a fallback image to use when posts don't have a featured image."
+#: functions.php:128
+msgid "from"
+msgstr ""
+
+#: functions.php:149
+msgid "Author"
+msgstr ""
+
+#: functions.php:155
+msgid "at"
+msgstr ""
+
+#: functions.php:171
+msgid "Reply"
+msgstr ""
+
+#: functions.php:175
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: page.php:38
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""

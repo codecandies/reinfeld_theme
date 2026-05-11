@@ -182,3 +182,25 @@ if (! function_exists('reinfeld_comment')) :
     endswitch;
   }
 endif; // End if().
+
+/**
+ * Wechselt den Gesichtsausdruck des Header-Avatars pro Seitenaufruf.
+ *
+ * Der Ausdruck wird deterministisch aus Datum + URL-Hash gewählt:
+ * - ändert sich nicht bei jedem Klick auf F5 (gleiche Seite → gleicher Ausdruck)
+ * - variiert zwischen verschiedenen Seiten und von Tag zu Tag
+ *
+ * Mögliche Zustände:
+ *   "avatar"           → lächelnd (Standard)
+ *   "avatar screaming" → schreiend
+ *   "avatar disbelief" → ungläubig
+ */
+add_filter('reinfeld_avatar_class', function ($default) {
+    $states = ['avatar', 'avatar screaming', 'avatar disbelief'];
+
+    // Seed aus aktuellem Datum + URL → stabiler Ausdruck pro Seite/Tag,
+    // aber abwechslungsreich über das gesamte Archiv.
+    $seed = crc32(date('Y-m-d') . $_SERVER['REQUEST_URI']);
+
+    return $states[abs($seed) % count($states)];
+});

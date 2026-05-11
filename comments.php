@@ -30,7 +30,7 @@ if (post_password_required()) {
         'style'       => 'ol',
         'short_ping'  => true,
         'avatar_size' => 50,
-        'callback'    => 'reinfeld_comment', // Use default callback
+        'callback'    => 'reinfeld_comment',
       ));
       ?>
     </ol>

@@ -10,16 +10,28 @@
 <div class="theme">
   <div class="toggle-container">
     <fieldset class="toggle-fieldset" id="mode-switcher">
-      <legend class="toggle-legend"><?php esc_html_e('Choose color theme:', 'reinfeld'); ?></legend>
-      <div class="toggle-switch" role="radiogroup" aria-labelledby="mode-switcher">
+      <legend class="toggle-legend"><?php esc_html_e(
+          "Choose color theme:",
+          "reinfeld",
+      ); ?></legend>
+      <div class="toggle-switch">
         <input type="radio" id="light" name="mode" value="light" class="toggle-input" aria-describedby="light-desc" />
-        <label for="light" class="toggle-label"><?php esc_html_e('Light', 'reinfeld'); ?></label>
+        <label for="light" class="toggle-label"><?php esc_html_e(
+            "Light",
+            "reinfeld",
+        ); ?></label>
 
         <input type="radio" id="auto" name="mode" value="auto" class="toggle-input" checked aria-describedby="auto-desc" />
-        <label for="auto" class="toggle-label"><?php esc_html_e('Auto', 'reinfeld'); ?></label>
+        <label for="auto" class="toggle-label"><?php esc_html_e(
+            "Auto",
+            "reinfeld",
+        ); ?></label>
 
         <input type="radio" id="dark" name="mode" value="dark" class="toggle-input" aria-describedby="dark-desc" />
-        <label for="dark" class="toggle-label"><?php esc_html_e('Dark', 'reinfeld'); ?></label>
+        <label for="dark" class="toggle-label"><?php esc_html_e(
+            "Dark",
+            "reinfeld",
+        ); ?></label>
 
         <div class="toggle-handle" aria-hidden="true">
           <!-- Sonne Icon für Light Mode -->
@@ -45,9 +57,18 @@
   </div>
 
   <!-- Versteckte Beschreibungen für Screen Reader -->
-  <div style="position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden;">
-    <div id="light-desc"><?php esc_html_e('Helles Design aktivieren', 'reinfeld'); ?></div>
-    <div id="auto-desc"><?php esc_html_e('Automatisches Design basierend auf Systemeinstellungen', 'reinfeld'); ?></div>
-    <div id="dark-desc"><?php esc_html_e('Dunkles Design aktivieren', 'reinfeld'); ?></div>
+  <div class="screen-reader-text">
+    <div id="light-desc"><?php esc_html_e(
+        "Helles Design aktivieren",
+        "reinfeld",
+    ); ?></div>
+    <div id="auto-desc"><?php esc_html_e(
+        "Automatisches Design basierend auf Systemeinstellungen",
+        "reinfeld",
+    ); ?></div>
+    <div id="dark-desc"><?php esc_html_e(
+        "Dunkles Design aktivieren",
+        "reinfeld",
+    ); ?></div>
   </div>
 </div>

@@ -54,11 +54,12 @@ $related_posts = get_posts($related_posts_args);
 if ($related_posts):
   global $post;
 ?>
-  <section aria-labeledby="related-posts-title" class="article-extension">
+  <section aria-labelledby="related-posts-title" class="article-extension">
     <h2 id="related-posts-title"><?php esc_html_e('Related Posts', 'reinfeld'); ?></h2>
     <div class="related-posts">
       <?php foreach ($related_posts as $post):
         setup_postdata($post);
+        $image = null;
         if (has_post_thumbnail()):
           $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'reinfeld_list-image');
           $image = $image[0];

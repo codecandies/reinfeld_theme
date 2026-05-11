@@ -27,7 +27,8 @@
 
     <header>
       <div class="logo">
-        <a href="<?php echo esc_url(home_url('/')); ?>">
+        <a href="<?php echo esc_url(home_url('/')); ?>"
+           aria-label="<?php echo esc_attr(get_bloginfo('name')); ?> – <?php esc_attr_e('Home', 'reinfeld'); ?>">
           <?php get_template_part('template-parts/avatar-svg'); ?>
         </a>
       </div>

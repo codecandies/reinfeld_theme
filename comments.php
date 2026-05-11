@@ -4,9 +4,15 @@
 if (post_password_required()) {
   return;
 }
+
+// Render the section if there are existing comments or the form is open.
+if (!$comments && !comments_open()) {
+  return;
+}
 ?>
-<?php if ($comments) : ?>
-  <section id="comments" class="article-extension comments-area" aria-labeledby="comments-title">
+<section id="comments" class="article-extension comments-area" aria-labelledby="comments-title">
+
+  <?php if ($comments) : ?>
     <h2 id="comments-title">
       <?php
       $comments_number = get_comments_number();
@@ -38,15 +44,15 @@ if (post_password_required()) {
     <?php
     the_comments_navigation();
 
-    // If comments are closed and there are comments, let's leave a little note, shall we?
+    // If comments are closed and there are comments, leave a notice.
     if (!comments_open()) :
     ?>
       <p class="no-comments"><?php esc_html_e('Comments are closed.', 'reinfeld'); ?></p>
     <?php
     endif;
+  endif; // $comments
+  ?>
 
-    comment_form();
-    ?>
+  <?php comment_form(); ?>
 
-  </section>
-<?php endif; ?>
+</section>

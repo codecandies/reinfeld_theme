@@ -202,7 +202,7 @@ if (! function_exists('reinfeld_comment')) :
               ));
               ?>
               <?php if ('0' == $comment->comment_approved) : ?>
-                <span class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.', 'reinfeld'); ?></p>
+                <span class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.', 'reinfeld'); ?></span>
                 <?php endif; ?>
             </footer>
           </article><!-- .comment -->

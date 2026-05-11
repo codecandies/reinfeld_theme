@@ -68,7 +68,7 @@ if ($related_posts):
         <article>
           <div>
             <?php if (isset($image)): ?>
-              <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr(get_the_title($post)); ?>">
+              <img src="<?php echo esc_url($image); ?>" alt="">
             <?php else:
               $fallback_thumbnail_id = get_theme_mod('reinfeld_fallback_thumbnail');
               if ($fallback_thumbnail_id) {
@@ -82,14 +82,14 @@ if ($related_posts):
                 $fallback_image_url = get_template_directory_uri() . '/assets/img/no-image.png';
               }
             ?>
-              <img src="<?php echo esc_url($fallback_image_url); ?>" alt="<?php echo esc_attr(get_the_title($post)); ?>">
+              <img src="<?php echo esc_url($fallback_image_url); ?>" alt="">
             <?php endif; ?>
           </div>
-          <h2>
+          <h3>
             <a href="<?php echo esc_url(get_permalink($post)); ?>">
               <?php echo esc_html(get_the_title($post)); ?>
             </a>
-          </h2>
+          </h3>
         </article>
       <?php endforeach;
       wp_reset_postdata(); ?>

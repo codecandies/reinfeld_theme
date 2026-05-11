@@ -40,6 +40,24 @@ $layout = is_array($layout_array) ? esc_html($layout_array[0]) : 'standard';
     the_content();
     ?>
   </div>
+
+  <?php
+  // Collect terms from post tags, persons and locations and display them
+  // with a # prefix at the end of the article body.
+  $entry_terms = [];
+  foreach (['post_tag', 'persons', 'locations'] as $tax) {
+      $terms = get_the_terms(get_the_ID(), $tax);
+      if ($terms && !is_wp_error($terms)) {
+          $entry_terms = array_merge($entry_terms, $terms);
+      }
+  }
+  if ($entry_terms) : ?>
+  <footer class="entry-terms">
+    <?php foreach ($entry_terms as $term) : ?>
+      <a href="<?php echo esc_url(get_term_link($term)); ?>" class="entry-term" rel="tag">#<?php echo esc_html($term->name); ?></a>
+    <?php endforeach; ?>
+  </footer>
+  <?php endif; ?>
 </article>
 
 <?php

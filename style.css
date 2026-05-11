@@ -147,7 +147,6 @@ body {
     font-style: normal;
     height: 100%;
     margin: 0;
-    min-width: 23.4375em;
 }
 
 .symbols {
@@ -214,11 +213,72 @@ body {
     margin-left: auto;
 }
 
-@media screen and (max-width: 25em) {
-    .theme,
-    .rsslink,
-    header .logo {
-        zoom: 0.8;
+@media screen and (max-width: 27.5em) {
+    /* Header: Padding reduziert, Logo verkleinert */
+    .page > header {
+        padding: 10px 0.75rem 0;
+    }
+    .logo {
+        align-content: end;
+    }
+
+    /* Theme-Toggle ausblenden — OS-Einstellung übernimmt via Auto-Mode */
+    .theme {
+        display: none;
+    }
+
+    /* RSS-Icon: Tap-Target bleibt 44×44px (WCAG 2.5.5 AAA) */
+    .rsslink {
+        margin-left: auto;
+    }
+
+    /* Main-Grid: schmalere Gutter, damit Content nicht überläuft */
+    main.archive,
+    main.article {
+        grid-template-columns:
+            minmax(0.75rem, 1fr)
+            auto
+            minmax(0.75rem, 1fr);
+        gap: 1.75rem 0;
+    }
+
+    /* Artikel-Bilder dürfen niemals breiter als Viewport werden */
+    .article-image {
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    /* Form-Elemente: volle Spaltenbreite, box-sizing für sauberes Padding */
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="url"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="week"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"],
+    textarea {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px;
+    }
+
+    /* Footer-Navigationen vertikal stapeln */
+    .footer {
+        gap: 20px 0;
+    }
+    /*.mainnav,*/
+    .webring {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px 0;
+        font-size: 1.1rem;
     }
 }
 
@@ -895,9 +955,10 @@ blockquote p:last-child::after {
 .mainnav {
     grid-area: links;
     display: flex;
+    flex-direction: column;
     font-size: 1.2rem;
     font-weight: 500;
-    justify-content: space-between;
+    gap: 10px 0;
 }
 
 .mainnav a:hover {
@@ -940,10 +1001,8 @@ blockquote p:last-child::after {
 
     .mainnav {
         align-items: end;
-        flex-direction: column;
         justify-content: start;
         justify-self: end;
-        gap: 10px 0;
         padding-top: 5px;
     }
 }

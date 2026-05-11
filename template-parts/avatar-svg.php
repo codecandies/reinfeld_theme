@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Avatar SVG Template Part
  *

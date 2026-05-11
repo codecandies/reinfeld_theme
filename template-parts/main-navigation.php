@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Main Navigation Template Part
  *

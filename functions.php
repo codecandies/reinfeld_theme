@@ -63,8 +63,38 @@ if (!function_exists('reinfeld_setup')):
         'flex-height' => true,
       )
     );
+
+    // Navigation menu locations
+    register_nav_menus([
+      'footer-links' => __('Navigation (Footer)', 'reinfeld'),
+    ]);
   }
   add_action('after_setup_theme', 'reinfeld_setup');
+endif;
+
+/**
+ * Flat nav walker — renders menu items as plain <a> tags without <ul>/<li>
+ * wrappers, so they blend seamlessly with the surrounding hardcoded links
+ * in .mainnav.
+ */
+if (!class_exists('Reinfeld_Flat_Nav_Walker')):
+  class Reinfeld_Flat_Nav_Walker extends Walker_Nav_Menu
+  {
+    // Suppress sub-menu levels entirely
+    public function start_lvl(&$output, $depth = 0, $args = null) {}
+    public function end_lvl(&$output, $depth = 0, $args = null) {}
+
+    public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
+    {
+      $target = !empty($item->target) ? ' target="' . esc_attr($item->target) . '"' : '';
+      $rel    = !empty($item->xfn)    ? ' rel="'    . esc_attr($item->xfn)    . '"' : '';
+      $output .= '<a href="' . esc_url($item->url) . '"' . $target . $rel . '>'
+               . esc_html($item->title)
+               . '</a>';
+    }
+
+    public function end_el(&$output, $item, $depth = 0, $args = null) {}
+  }
 endif;
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

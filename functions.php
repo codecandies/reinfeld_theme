@@ -192,25 +192,25 @@ if (! function_exists('reinfeld_comment')) :
             </div><!-- .comment-content -->
 
             <footer class="comment-footer">
-              <?php
-              comment_reply_link(array(
-                'after'      => '</span>',
-                'before'    => '<span class="comment-reply">',
-                'depth'      => $depth,
-                'max_depth'   => $args['max_depth'],
-                'reply_text'   => __('Reply', 'reinfeld'),
-              ));
-              ?>
-              <?php if ('0' == $comment->comment_approved) : ?>
-                <span class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.', 'reinfeld'); ?></span>
+              <?php comment_reply_link([
+                  "after" => "</span>",
+                  "before" => '<span class="comment-reply">',
+                  "depth" => $depth,
+                  "max_depth" => $args["max_depth"],
+                  "reply_text" => __("Reply", "reinfeld"),
+              ]); ?>
+              <?php if ("0" == $comment->comment_approved): ?>
+                <span class="comment-awaiting-moderation"><?php _e(
+                    "Your comment is awaiting moderation.",
+                    "reinfeld",
+                ); ?></span>
                 <?php endif; ?>
             </footer>
           </article><!-- .comment -->
 
-  <?php
-        break;
-    endswitch;
-  }
+  <?php break;
+        endswitch;
+    }
 endif; // End if().
 
 /**

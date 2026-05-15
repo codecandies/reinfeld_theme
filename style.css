@@ -928,6 +928,28 @@ blockquote p:last-child::after {
     content: close-quote;
 }
 
+/* Ornamental section break */
+main hr {
+    border: none;
+    border-top: 1px solid currentColor;
+    height: 0;
+    margin: 2em auto;
+    overflow: visible;
+    text-align: center;
+}
+
+main hr::before {
+    background-color: var(--body-bg);
+    content: "***";
+    display: inline-block;
+    font-size: 15px;
+    letter-spacing: 0.25em;
+    line-height: 1;
+    padding: 0 0.55em 0 0.75em;
+    position: relative;
+    top: -0.6em;
+}
+
 /* Footer */
 .page > footer {
     background: var(--header-bg-end);

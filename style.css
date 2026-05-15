@@ -215,11 +215,18 @@ body {
 
 @media screen and (max-width: 27.5em) {
     /* Header: Padding reduziert, Logo verkleinert */
+    body {
+        --head-space: 80px;
+    }
     .page > header {
         padding: 10px 0.75rem 0;
     }
     .logo {
         align-content: end;
+    }
+
+    .logo svg {
+        width: 74px;
     }
 
     /* Theme-Toggle ausblenden — OS-Einstellung übernimmt via Auto-Mode */
@@ -888,6 +895,10 @@ article.fullwidth figure.entry-image-wrapper::after {
     left: 0;
     position: absolute;
     width: 100%;
+}
+
+article.fullwidth .entry-content {
+    padding-top: 1.5rem;
 }
 
 /* Code styling */

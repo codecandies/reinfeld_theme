@@ -6,25 +6,18 @@
  */
 ?>
 <!-- main-navigation.php -->
-<nav class="mainnav" aria-label="<?php esc_attr_e(
-    "Main Navigation",
-    "reinfeld",
-); ?>">
-  <a href="<?php echo esc_url(home_url("/")); ?>"><?php esc_html_e(
-    "Overview",
-    "reinfeld",
-); ?></a>
+<nav class="mainnav" aria-label="<?php esc_attr_e("Main Navigation", "reinfeld"); ?>">
+  <a href="<?php echo esc_url(home_url("/")); ?>"><?php esc_html_e("Overview", "reinfeld"); ?></a>
 
-  <?php
-  // Configurable links via Appearance → Menus → Navigation (Footer)
-  wp_nav_menu([
-    'theme_location' => 'footer-links',
-    'container'      => false,
-    'items_wrap'     => '%3$s',
-    'walker'         => new Reinfeld_Flat_Nav_Walker(),
-    'fallback_cb'    => false,
-  ]);
-  ?>
+  <?php // Configurable links via Appearance → Menus → Navigation (Footer)
+
+wp_nav_menu([
+    "theme_location" => "footer-links",
+    "container" => false,
+    "items_wrap" => '%3$s',
+    "walker" => new Reinfeld_Flat_Nav_Walker(),
+    "fallback_cb" => false,
+  ]); ?>
 
   <?php
   // Check if we have a GitHub URL option in customizer or use fallback
@@ -34,7 +27,8 @@
       <?php esc_html_e("Github", "reinfeld"); ?>
       <span class="screen-reader-text"><?php esc_html_e("(opens in new tab)", "reinfeld"); ?></span>
     </a>
-  <?php endif; ?>
+  <?php endif;
+  ?>
 
   <?php
   // Check if we have a Bluesky URL option in customizer
@@ -44,7 +38,8 @@
       <?php esc_html_e("Bluesky", "reinfeld"); ?>
       <span class="screen-reader-text"><?php esc_html_e("(opens in new tab)", "reinfeld"); ?></span>
     </a>
-  <?php endif; ?>
+  <?php endif;
+  ?>
 
   <?php
   // Check if we have a Mastodon URL option in customizer
@@ -54,5 +49,6 @@
       <?php esc_html_e("Mastodon", "reinfeld"); ?>
       <span class="screen-reader-text"><?php esc_html_e("(opens in new tab)", "reinfeld"); ?></span>
     </a>
-  <?php endif; ?>
+  <?php endif;
+  ?>
 </nav>

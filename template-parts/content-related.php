@@ -1,28 +1,29 @@
 <?php
 
-if (get_theme_mod('reinfeld_hide_related_posts', false)) return;
+if (get_theme_mod("reinfeld_hide_related_posts", false)) {
+  return;
+}
 
-$related_post_ids = array();
+$related_post_ids = [];
 
 // Exclude sticky posts and the current post
-$exclude = get_option('sticky_posts');
+$exclude = get_option("sticky_posts");
 $exclude[] = $post->ID;
 
 // Arguments used by all the queries below
-$base_args = array(
-  'orderby'       => 'rand',
-  'post__not_in'     => $exclude,
-  'post_status'     => 'publish',
-  'posts_per_page'   => 4,
-);
+$base_args = [
+  "orderby" => "rand",
+  "post__not_in" => $exclude,
+  "post_status" => "publish",
+  "posts_per_page" => 4,
+];
 
 // Check categories first
 $categories = wp_get_post_categories($post->ID);
 
 if ($categories) {
-
   $categories_args = $base_args;
-  $categories_args['category__in'] = $categories;
+  $categories_args["category__in"] = $categories;
 
   $categories_posts = get_posts($categories_args);
 
@@ -33,10 +34,9 @@ if ($categories) {
 
 // If we don't get four posts from that, fill up with posts selected at random
 if (count($related_post_ids) < 4) {
-
   // Only with as many as we need though
   $random_post_args = $base_args;
-  $random_post_args['posts_per_page'] = 4 - count($related_post_ids);
+  $random_post_args["posts_per_page"] = 4 - count($related_post_ids);
 
   $random_posts = get_posts($random_post_args);
 
@@ -47,41 +47,42 @@ if (count($related_post_ids) < 4) {
 
 // Get the posts we've scrambled together
 $related_posts_args = $base_args;
-$related_posts_args['include'] = $related_post_ids;
+$related_posts_args["include"] = $related_post_ids;
 
 $related_posts = get_posts($related_posts_args);
 
 if ($related_posts):
-  global $post;
-?>
+  global $post; ?>
   <section aria-labelledby="related-posts-title" class="article-extension">
-    <h2 id="related-posts-title"><?php esc_html_e('Related Posts', 'reinfeld'); ?></h2>
+    <h2 id="related-posts-title"><?php esc_html_e("Related Posts", "reinfeld"); ?></h2>
     <div class="related-posts">
-      <?php foreach ($related_posts as $post):
+      <?php
+      foreach ($related_posts as $post):
+
         setup_postdata($post);
         $image = null;
         if (has_post_thumbnail()):
-          $image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'reinfeld_list-image');
+          $image = wp_get_attachment_image_src(get_post_thumbnail_id(), "reinfeld_list-image");
           $image = $image[0];
         endif;
-      ?>
+        ?>
         <article>
           <div>
             <?php if (isset($image)): ?>
               <img src="<?php echo esc_url($image); ?>" alt="">
             <?php else:
-              $fallback_thumbnail_id = get_theme_mod('reinfeld_fallback_thumbnail');
+              $fallback_thumbnail_id = get_theme_mod("reinfeld_fallback_thumbnail");
               if ($fallback_thumbnail_id) {
-                $fallback_image = wp_get_attachment_image_src($fallback_thumbnail_id, 'reinfeld_list-image');
+                $fallback_image = wp_get_attachment_image_src($fallback_thumbnail_id, "reinfeld_list-image");
                 if ($fallback_image) {
                   $fallback_image_url = $fallback_image[0];
                 } else {
-                  $fallback_image_url = get_template_directory_uri() . '/assets/img/no-image.png';
+                  $fallback_image_url = get_template_directory_uri() . "/assets/img/no-image.png";
                 }
               } else {
-                $fallback_image_url = get_template_directory_uri() . '/assets/img/no-image.png';
+                $fallback_image_url = get_template_directory_uri() . "/assets/img/no-image.png";
               }
-            ?>
+              ?>
               <img src="<?php echo esc_url($fallback_image_url); ?>" alt="">
             <?php endif; ?>
           </div>
@@ -91,8 +92,10 @@ if ($related_posts):
             </a>
           </h3>
         </article>
-      <?php endforeach;
-      wp_reset_postdata(); ?>
+      <?php
+      endforeach;
+      wp_reset_postdata();
+      ?>
     </div>
   </section>
 <?php

@@ -200,7 +200,7 @@ body {
 }
 
 .logo svg {
-    aspect-ratio: 264/280;
+    aspect-ratio: 264/281;
     display: block;
     margin: 0 0 0 -13px;
     width: 120px;
@@ -466,7 +466,8 @@ main {
     grid-template-columns:
         minmax(1.5rem, 1fr) minmax(auto, var(--column-width))
         minmax(1.5rem, 1fr);
-    margin: 0;
+    margin: 0 auto;
+    max-width: 87.5rem;
     padding: 2.5rem 0;
 }
 
@@ -488,7 +489,16 @@ main strong {
     font-weight: 600;
 }
 
+main figure {
+    margin: 0 0 1em;
+}
+
+main figcaption {
+    margin: 0.5em 0 0;
+}
+
 main img:not(.avatar) {
+    display: block;
     filter: grayscale(var(--grayscale)) brightness(var(--brightness));
     max-width: 100%;
     height: auto;

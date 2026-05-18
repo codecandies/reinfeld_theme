@@ -934,10 +934,20 @@ main pre:has(> code) {
 
 /* Blockquotes */
 blockquote {
+  border-left: 10px solid var(--text-color);
   color: CanvasText;
   font-weight: 400;
   font-style: italic;
-  quotes: "" " " "" "'" "'";
+  margin: 0;
+  padding: 1em 1em 1em 2em;
+}
+
+blockquote p:first-child {
+  margin-block-start: 0;
+}
+
+blockquote p:last-child {
+  margin-block-end: 0;
 }
 
 blockquote p:first-child::before {
@@ -946,6 +956,36 @@ blockquote p:first-child::before {
 
 blockquote p:last-child::after {
   content: close-quote;
+}
+
+.quotation,
+.rf-quotation {
+  border-left: 10px solid var(--text-color);
+  margin-bottom: 1.5625rem;
+  padding: 1em 1em 1em 2em;
+  quotes: "„" "“" "‚" "‘";
+  & > blockquote,
+  & > figcaption {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  & > figcaption {
+    margin-top: 1em;
+  }
+}
+
+ul,
+ol:not(.footnotes-list, .comment-list) {
+  font-size: 1.2rem;
+  li {
+    line-height: 1.6;
+    margin-bottom: 1.5625rem;
+  }
+}
+
+ol.footnotes-list {
+  padding: 0 0 0 1em;
 }
 
 /* Ornamental section break */

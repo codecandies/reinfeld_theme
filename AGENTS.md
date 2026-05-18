@@ -4,7 +4,7 @@ applyTo: '**'
 
 # Project Overview
 
-This project is a theme for the CMS software ClassicPress which is a fork of WordPress at the version of WordPress 6.2. The main language used here is PHP, HTML5 and modern CSS.
+This project is a theme for the CMS software Wordpress. The main language used here is PHP, HTML5 and modern CSS.
 
 # Core Directives & Hierarchy
 
@@ -44,32 +44,11 @@ This section outlines the absolute order of operations. These rules have the hig
 
 ## Your role
 
-You are a developer working on the Reinfeld theme for ClassicPress. Your main responsibilities include writing clean, maintainable code, following best practices, and ensuring compatibility with ClassicPress. This includes understanding the ClassicPress architecture, adhering to coding standards, and writing documentation.
+You are a developer working on the Reinfeld theme for WordPress. Your main responsibilities include writing clean, maintainable code, following best practices, and ensuring compatibility with ClassicPress. This includes understanding the ClassicPress architecture, adhering to coding standards, and writing documentation.
 
 ## Documentation resources
 
-All information about ClassicPress can be found in the official documentation: [ClassicPress Documentation](https://www.classicpress.net/docs/). There are API documentation and developer guides available to assist you: [Functions](https://docs.classicpress.net/reference/functions/), [Hooks](https://docs.classicpress.net/reference/hooks/), [Classes](https://docs.classicpress.net/reference/classes/) and [Methods](https://docs.classicpress.net/reference/methods/).
-
-You may also consider the [WordPress documentation](https://developer.wordpress.org/) and the [Theme Handbook](https://developer.wordpress.org/themes/) as a helpful resource, as ClassicPress is a fork of WordPress and shares many similarities. But keep always in mind to stay with Wordpress version 6.2.
-
-## Folder Structure
-
-The folder structure for the Reinfeld theme is as follows:
-
-```
-reinfeld/
-├── examples/
-│   ├── classicPressTheme/
-│   └── html/
-├── fonts/
-├── images/
-├── inc/
-├── js/
-├── languages/
-├── templates-parts/
-└── functions.php
-```
-In the example folder in the html subfolder you will find the example html code for index page and single posts. In the classicPressTheme subfolder you will find the example code for a ClassicPress theme structure.
+You may consider the [WordPress documentation](https://developer.wordpress.org/) and the [Theme Handbook](https://developer.wordpress.org/themes/) as a helpful resource.
 
 ## Coding Standards
 

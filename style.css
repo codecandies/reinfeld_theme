@@ -463,7 +463,7 @@ main {
     minmax(1.5rem, 1fr) minmax(auto, var(--column-width))
     minmax(1.5rem, 1fr);
   margin: 0 auto;
-  max-width: 87.5rem;
+  max-width: calc(75rem + 40px);
   padding: 2.5rem 0;
 }
 
@@ -490,6 +490,7 @@ main figure {
 }
 
 main figcaption {
+  font-family: "Overpass", sans-serif;
   margin: 0.5em 0 0;
 }
 
@@ -696,6 +697,10 @@ a.continue {
   text-decoration: underline;
 }
 
+.header-anchor {
+  display: none;
+}
+
 .article > header {
   margin-bottom: 30px;
 }
@@ -843,7 +848,7 @@ a.continue {
   display: block;
   max-width: 100%;
   object-fit: cover;
-  object-position: bottom;
+  object-position: center;
   width: 100vw;
 }
 
@@ -899,7 +904,11 @@ article.fullwidth figure.entry-image-wrapper::after {
 }
 
 article.fullwidth .entry-content {
-  padding-top: 1.5rem;
+  padding-top: 1.2rem;
+}
+
+.entry-content > :first-child:not(p) {
+  margin-top: 1.2rem;
 }
 
 /* Code styling */
@@ -1041,7 +1050,6 @@ main hr::before {
 }
 
 .article-extension {
-  border-bottom: 1px solid color-mix(in srgb, canvasText 25%, transparent);
   display: grid;
   font-family: "Overpass", sans-serif;
   font-optical-sizing: auto;
@@ -1124,6 +1132,7 @@ main hr::before {
   font-size: 1.2rem;
   font-weight: 300;
   font-style: normal;
+  margin-top: 0.5em;
 }
 
 /* Forms */

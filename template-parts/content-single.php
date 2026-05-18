@@ -64,12 +64,12 @@ $layout = is_array($layout_array) ? esc_html($layout_array[0]) : "standard";
 <?php
 get_template_part("template-parts/content", "prevnext");
 
-get_template_part("template-parts/content", "related");
-
 // Comments section
 if (comments_open() || get_comments_number()):
   comments_template();
 endif;
+
+get_template_part("template-parts/content", "related");
 
 
 ?>

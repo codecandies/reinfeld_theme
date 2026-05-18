@@ -179,11 +179,16 @@ body {
 .page > header {
   background: var(--header-bg);
   background-image: linear-gradient(in oklch, var(--header-bg-start), var(--header-bg-end));
+  margin: 0;
+}
+
+.header-container {
   display: flex;
   height: var(--head-space);
   justify-content: space-between;
-  margin: 0;
-  padding: 10px clamp(1.5rem, 5.9vw, 500px) 0;
+  margin: 0 auto;
+  max-width: 75rem;
+  padding: 10px 20px 0;
 }
 
 .logo {

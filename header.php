@@ -25,16 +25,18 @@
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e("Skip to content", "reinfeld"); ?></a>
 
     <header>
-      <div class="logo">
-        <a href="<?php echo esc_url(home_url("/")); ?>"
-           aria-label="<?php echo esc_attr(get_bloginfo("name")); ?> – <?php esc_attr_e("Home", "reinfeld"); ?>">
-          <?php get_template_part("template-parts/avatar-svg"); ?>
-        </a>
+      <div class="header-container">
+        <div class="logo">
+          <a href="<?php echo esc_url(home_url("/")); ?>"
+             aria-label="<?php echo esc_attr(get_bloginfo("name")); ?> – <?php esc_attr_e("Home", "reinfeld"); ?>">
+            <?php get_template_part("template-parts/avatar-svg"); ?>
+          </a>
+        </div>
+
+        <?php get_template_part("template-parts/theme-toggle"); ?>
+
+        <?php get_template_part("template-parts/rss-link"); ?>
       </div>
-
-      <?php get_template_part("template-parts/theme-toggle"); ?>
-
-      <?php get_template_part("template-parts/rss-link"); ?>
     </header>
 
     <main id="content" class="<?php echo is_home() || is_archive()

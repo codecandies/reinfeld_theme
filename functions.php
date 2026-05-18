@@ -173,28 +173,18 @@ if (!function_exists("reinfeld_comment")):
 
           <article id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
             <header class="comment-meta">
-              <div class="comment-avatar">
-                <?php echo get_avatar($comment, 50, "robohash"); ?>
-              </div>
-
-              <div class="comment-author">
-                <cite><?php echo get_comment_author_link(); ?></cite>
-                <?php if ($comment->user_id === $post->post_author) {
-                  echo " (" . __("Author", "reinfeld") . ")";
-                } ?>
-              </div>
-
-              <div class="comment-metadata">
-                <span class="comment-date">
-                  <a class="comment-date-link" href="<?php echo esc_url(
-                    get_comment_link($comment->comment_ID),
-                  ); ?>" title="<?php echo get_comment_date() .
+              <span class="comment-number">#</span>
+              <cite><?php echo get_comment_author_link(); ?></cite>
+              <?php if ($comment->user_id === $post->post_author) {
+                echo " (" . __("Author", "reinfeld") . ")";
+              } ?>
+              — <a class="comment-date-link" href="<?php echo esc_url(
+                get_comment_link($comment->comment_ID),
+              ); ?>" title="<?php echo get_comment_date() .
   " " .
   __("at", "reinfeld") .
   " " .
   get_comment_time(); ?>"><?php echo get_comment_date(get_option("date_format")); ?></a>
-                </span>
-              </div>
             </header>
 
             <div class="comment-content entry-content">

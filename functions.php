@@ -118,6 +118,17 @@ if (!function_exists("reinfeld_scripts")):
 endif;
 
 /**
+ * Register theme-provided editor blocks.
+ */
+if (!function_exists("reinfeld_register_blocks")):
+  function reinfeld_register_blocks()
+  {
+    register_block_type(get_template_directory() . "/blocks/quotation");
+  }
+  add_action("init", "reinfeld_register_blocks");
+endif;
+
+/**
  * Load theme textdomain for internationalization.
  */
 if (!function_exists("reinfeld_textdomain")):

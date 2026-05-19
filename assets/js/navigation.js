@@ -1,60 +1,118 @@
 /**
- * Accessible hamburger navigation toggle.
+ * Accessible slide-in navigation drawer.
  *
- * Progressive enhancement: the menu panel ships open-capable but is
- * collapsed here once JS runs, then toggled via an aria-expanded button.
+ * Progressive enhancement: the navigation lives visibly in the footer
+ * (#site-footer-nav) and is reachable without JS via the header anchor.
+ * When JS runs, the header button clones that menu into an off-canvas
+ * drawer with backdrop, focus trap, Escape handling and an animated
+ * hamburger-to-close icon.
  */
-( function () {
-	"use strict";
+(function () {
+  var button = document.querySelector(".menu-button");
+  var drawer = document.getElementById("menu-drawer");
+  var backdrop = document.querySelector(".menu-backdrop");
+  var source = document.querySelector("#site-footer-nav .mainnav");
 
-	var button = document.querySelector( ".menu-button" );
-	var panel = document.getElementById( "primary-menu" );
+  if (!button || !drawer || !backdrop || !source) {
+    return;
+  }
 
-	if ( ! button || ! panel ) {
-		return;
-	}
+  // The footer navigation is the single source of truth — clone it.
+  var clone = source.cloneNode(true);
+  clone.removeAttribute("id");
+  clone.setAttribute("aria-label", button.getAttribute("aria-label"));
+  drawer.appendChild(clone);
 
-	function isOpen() {
-		return button.getAttribute( "aria-expanded" ) === "true";
-	}
+  var lastFocus = null;
 
-	function open() {
-		button.setAttribute( "aria-expanded", "true" );
-		panel.hidden = false;
-	}
+  function focusable() {
+    return drawer.querySelectorAll("a[href], button:not([disabled])");
+  }
 
-	function close( returnFocus ) {
-		button.setAttribute( "aria-expanded", "false" );
-		panel.hidden = true;
-		if ( returnFocus ) {
-			button.focus();
-		}
-	}
+  function isOpen() {
+    return button.getAttribute("aria-expanded") === "true";
+  }
 
-	// JS present: start collapsed (no-JS fallback keeps the panel visible).
-	close( false );
+  function finishClose() {
+    if (!isOpen()) {
+      drawer.hidden = true;
+      backdrop.hidden = true;
+    }
+    drawer.removeEventListener("transitionend", finishClose);
+  }
 
-	button.addEventListener( "click", function () {
-		if ( isOpen() ) {
-			close( false );
-		} else {
-			open();
-		}
-	} );
+  function open() {
+    lastFocus = document.activeElement;
+    drawer.hidden = false;
+    backdrop.hidden = false;
+    // Force reflow so the transform transition actually runs.
+    void drawer.offsetWidth;
+    button.setAttribute("aria-expanded", "true");
+    button.classList.add("is-active");
+    drawer.classList.add("is-open");
+    backdrop.classList.add("is-open");
+    document.body.classList.add("menu-open");
 
-	document.addEventListener( "keydown", function ( event ) {
-		if ( event.key === "Escape" && isOpen() ) {
-			close( true );
-		}
-	} );
+    var f = focusable();
+    if (f.length) {
+      f[0].focus();
+    }
+  }
 
-	document.addEventListener( "click", function ( event ) {
-		if (
-			isOpen() &&
-			! panel.contains( event.target ) &&
-			! button.contains( event.target )
-		) {
-			close( false );
-		}
-	} );
-} )();
+  function close(returnFocus) {
+    button.setAttribute("aria-expanded", "false");
+    button.classList.remove("is-active");
+    drawer.classList.remove("is-open");
+    backdrop.classList.remove("is-open");
+    document.body.classList.remove("menu-open");
+
+    drawer.addEventListener("transitionend", finishClose);
+    // Fallback when transitions are disabled (reduced motion).
+    window.setTimeout(finishClose, 400);
+
+    if (returnFocus && lastFocus) {
+      lastFocus.focus();
+    }
+  }
+
+  button.addEventListener("click", function (event) {
+    event.preventDefault();
+    if (isOpen()) {
+      close(true);
+    } else {
+      open();
+    }
+  });
+
+  backdrop.addEventListener("click", function () {
+    close(true);
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (!isOpen()) {
+      return;
+    }
+
+    if (event.key === "Escape") {
+      close(true);
+      return;
+    }
+
+    if (event.key === "Tab") {
+      var f = focusable();
+      if (!f.length) {
+        return;
+      }
+      var first = f[0];
+      var last = f[f.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
+})();

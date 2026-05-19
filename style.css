@@ -331,11 +331,7 @@ body {
     padding: 12px;
   }
 
-  /* Footer-Navigationen vertikal stapeln */
-  .footer {
-    gap: 20px 0;
-  }
-  /*.mainnav,*/
+  /* Webring-Links vertikal stapeln */
   .webring {
     flex-direction: column;
     align-items: flex-start;
@@ -1079,22 +1075,39 @@ main hr::before {
 }
 
 .footer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 0 auto;
+  max-width: 75rem;
+  padding: 30px 20px;
+}
+
+.footer-widgets {
   display: grid;
-  gap: 30px 0;
-  grid-template-columns:
-    minmax(1.5rem, 1fr) minmax(auto, var(--column-width))
-    minmax(1.5rem, 1fr);
-  grid-template-areas:
-    ". links ."
-    ". about ."
-    ". webring ."
-    ". . ."
-    ". colophon .";
-  padding: 30px 0;
+  gap: 30px;
+  grid-template-columns: 1fr;
+}
+
+.footer-col {
+  font-family: "Noto Serif", serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.footer-secondary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.footer-colophon {
+  text-align: center;
 }
 
 .mainnav {
-  grid-area: links;
   display: flex;
   flex-direction: column;
   font-size: 1.2rem;
@@ -1112,39 +1125,34 @@ main hr::before {
   font-optical-sizing: auto;
   font-size: 1.2rem;
   line-height: 1.6;
-  grid-area: about;
 }
 
 .webring {
   display: flex;
   font-size: 1.2rem;
-  grid-area: webring;
+  gap: 0 1.5rem;
   justify-content: space-between;
 }
 
 .colophon {
   font-size: 0.75rem;
-  grid-area: colophon;
   text-align: center;
 }
 
 @media screen and (min-width: 62.5em) {
-  .footer {
-    gap: 30px;
-    grid-template-columns:
-      minmax(1.5rem, 1fr) min-content minmax(auto, var(--column-width))
-      minmax(1.5rem, 1fr);
-    grid-template-areas:
-      ". links about ."
-      ". . webring ."
-      ". colophon colophon .";
+  .footer-widgets {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
-  .mainnav {
-    align-items: end;
-    justify-content: start;
-    justify-self: end;
-    padding-top: 5px;
+  .footer-secondary {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .footer-secondary-right {
+    margin-left: auto;
   }
 }
 

@@ -38,9 +38,9 @@
           </a>
         </div>
 
-        <?php get_template_part("template-parts/theme-toggle"); ?>
-
         <?php get_template_part("template-parts/rss-link"); ?>
+
+        <?php get_template_part("template-parts/header-navigation"); ?>
       </div>
     </header>
 

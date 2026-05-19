@@ -113,8 +113,35 @@ if (!function_exists("reinfeld_scripts")):
 
     // Enqueue main stylesheet (depends on fonts)
     wp_enqueue_style("reinfeld-style", get_stylesheet_uri(), ["reinfeld-fonts"], REINFELD_VERSION);
+
+    // Accessible hamburger navigation toggle
+    wp_enqueue_script("reinfeld-navigation", get_template_directory_uri() . "/assets/js/navigation.js", [], REINFELD_VERSION, true);
   }
   add_action("wp_enqueue_scripts", "reinfeld_scripts");
+endif;
+
+/**
+ * Register footer widget areas.
+ */
+if (!function_exists("reinfeld_widgets_init")):
+  function reinfeld_widgets_init()
+  {
+    for ($i = 1; $i <= 3; $i++) {
+      register_sidebar([
+        "name" => sprintf(
+          /* translators: %d: Footer widget area number */
+          __("Footer %d", "reinfeld"),
+          $i,
+        ),
+        "id" => "footer-$i",
+        "before_widget" => '<section id="%1$s" class="widget %2$s">',
+        "after_widget" => "</section>",
+        "before_title" => '<h2 class="widget-title">',
+        "after_title" => "</h2>",
+      ]);
+    }
+  }
+  add_action("widgets_init", "reinfeld_widgets_init");
 endif;
 
 /**

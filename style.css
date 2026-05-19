@@ -230,65 +230,144 @@ body {
 .menu-button {
   align-items: center;
   background: var(--toggle-bg);
-  border: 0;
+  border: 1px solid rgba(0, 0, 0, 0.01);
   border-radius: 1rem;
   color: var(--body-color);
   cursor: pointer;
   display: flex;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 1rem;
-  gap: 0.5rem;
   height: 3rem;
+  width: 3rem;
   justify-content: center;
-  padding: 0 1rem;
+  outline: 1px solid rgba(0, 0, 0, 0.01);
+  padding: 0;
+  text-decoration: none;
+}
+
+.menu-button:hover {
+  border: 1px solid var(--link-color);
 }
 
 .menu-button:focus-visible {
   outline: 1px solid var(--focus-color);
 }
 
-.menu-icon {
+/* Keep the (now close) button above the open drawer/backdrop */
+.menu-button[aria-expanded="true"] {
+  position: relative;
+  z-index: 1001;
+}
+
+/* Animated hamburger → close (X) */
+.menu-bars {
+  display: block;
+  position: relative;
   width: 1.5rem;
-  height: 1.5rem;
+  height: 1.125rem;
 }
 
-.menu-panel {
-  background: var(--header-bg-end);
-  border-radius: 1rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-  margin-top: 0.5rem;
-  min-width: 12rem;
-  padding: 1rem 1.25rem;
+.menu-bars span {
   position: absolute;
-  right: 0;
-  top: 100%;
-  z-index: 10;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: var(--transition);
 }
 
-.menu-panel[hidden] {
+.menu-bars span:nth-child(1) {
+  top: 0;
+}
+
+.menu-bars span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menu-bars span:nth-child(3) {
+  bottom: 0;
+}
+
+.menu-button.is-active .menu-bars span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.menu-button.is-active .menu-bars span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-button.is-active .menu-bars span:nth-child(3) {
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+/* Slide-in drawer + backdrop */
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-backdrop.is-open {
+  opacity: 1;
+}
+
+.menu-backdrop[hidden] {
   display: none;
+}
+
+.menu-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  width: min(85vw, 360px);
+  height: 100dvh;
+  padding: 5rem 1.75rem 2rem;
+  background: var(--header-bg-end);
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.18);
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-drawer.is-open {
+  transform: translateX(0);
+}
+
+.menu-drawer[hidden] {
+  display: none;
+}
+
+body.menu-open {
+  overflow: hidden;
 }
 
 @media screen and (max-width: 37.5em) {
   /* Header: Padding reduziert, Logo verkleinert */
   body {
-    --head-space: 80px;
+    --head-space: 90px;
   }
-  .page > header {
-    padding: 10px 0.75rem 0;
+
+  .header-container {
+    padding: 10px 1.75rem 0;
   }
   .logo {
     align-content: end;
   }
 
   .logo svg {
-    width: 74px;
+    width: 85px;
   }
 
   /* Hamburger-Button: kompakteres Padding auf Mobile */
-  .menu-button {
-    padding: 0 0.625rem;
-  }
 
   .header-nav {
     margin-left: 0.75rem;

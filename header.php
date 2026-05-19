@@ -29,7 +29,12 @@
         <div class="logo">
           <a href="<?php echo esc_url(home_url("/")); ?>"
              aria-label="<?php echo esc_attr(get_bloginfo("name")); ?> – <?php esc_attr_e("Home", "reinfeld"); ?>">
-            <?php get_template_part("template-parts/avatar-svg"); ?>
+            <span><?php get_template_part("template-parts/avatar-svg"); ?></span>
+            <?php if ( is_singular() ) : ?>
+            <span class="logo-text"><?php bloginfo("name"); ?></span>
+            <?php else : ?>
+            <h1 class="logo-text"><?php bloginfo("name"); ?></h1>
+            <?php endif; ?>
           </a>
         </div>
 

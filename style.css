@@ -187,8 +187,8 @@ body {
   height: var(--head-space);
   justify-content: space-between;
   margin: 0 auto;
-  max-width: 75rem;
-  padding: 10px 20px 0;
+  /*max-width: 75rem;*/
+  padding: 10px 3rem 0;
 }
 
 .logo {
@@ -377,9 +377,9 @@ body.menu-open {
   main.archive,
   main.article {
     grid-template-columns:
-      minmax(0.75rem, 1fr)
+      minmax(1.75rem, 1fr)
       auto
-      minmax(0.75rem, 1fr);
+      minmax(1.75rem, 1fr);
     gap: 1.75rem 0;
   }
 
@@ -1158,7 +1158,7 @@ main hr::before {
   flex-direction: column;
   gap: 30px;
   margin: 0 auto;
-  max-width: 75rem;
+  /*max-width: 75rem;*/
   padding: 30px 20px;
 }
 
@@ -1197,6 +1197,10 @@ main hr::before {
 .mainnav a:hover {
   text-decoration: underline;
   text-decoration-thickness: from-font;
+}
+
+.footer-nav {
+  margin-bottom: 1.5rem;
 }
 
 .about {

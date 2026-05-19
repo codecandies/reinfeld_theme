@@ -566,22 +566,23 @@ body.menu-open {
 .rsslink a {
   align-items: center;
   background: var(--toggle-bg);
+  border: 1px solid rgba(0, 0, 0, 0.01);
   border-radius: 1rem;
+  color: var(--rss-color);
   display: flex;
   height: 3rem;
   justify-content: center;
+  outline: 1px solid rgba(0, 0, 0, 0.01);
   padding: 0.125rem;
   width: 3rem;
 }
 
-.rsslink a:link,
-.rsslink a:visited,
-.rsslink a:active {
-  color: var(--rss-color);
+.rsslink a:hover {
+  border: 1px solid var(--link-color);
 }
 
 .rsslink a:focus-visible {
-  outline: 1px solid var(--rss-color);
+  outline: 1px solid var(--focus-color);
 }
 
 /* Main Content */

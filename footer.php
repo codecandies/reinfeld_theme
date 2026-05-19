@@ -3,6 +3,9 @@
   <div class="footer">
     <div class="footer-widgets">
       <div class="footer-col">
+        <div id="site-footer-nav" class="footer-nav">
+          <?php get_template_part("template-parts/main-navigation"); ?>
+        </div>
         <?php dynamic_sidebar("footer-1"); ?>
       </div>
       <div class="footer-col">

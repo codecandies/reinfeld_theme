@@ -7,7 +7,6 @@
 ?>
 <!-- main-navigation.php -->
 <nav class="mainnav" aria-label="<?php esc_attr_e("Main Navigation", "reinfeld"); ?>">
-  <a href="<?php echo esc_url(home_url("/")); ?>"><?php esc_html_e("Overview", "reinfeld"); ?></a>
 
   <?php // Configurable links via Appearance → Menus → Navigation (Footer)
 

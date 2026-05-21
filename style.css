@@ -1159,30 +1159,37 @@ main hr::before {
   margin: 0;
 }
 
+.page > footer ol {
+  margin: 0;
+  padding: 0;
+}
+
 .footer {
   display: flex;
   flex-direction: column;
   gap: 30px;
   margin: 0 auto;
-  /*max-width: 75rem;*/
-  padding: 30px 20px;
+  padding: 3rem;
 }
 
 .footer-widgets {
   display: grid;
-  gap: 30px;
+  gap: 3rem;
   grid-template-columns: 1fr;
 }
 
 .footer-col {
-  font-family: "Noto Serif", serif;
   font-size: 1.2rem;
   line-height: 1.6;
 }
 
+.widget {
+  padding: 1rem 0;
+}
+
 .footer-secondary {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   gap: 20px;
   text-align: center;
@@ -1228,6 +1235,18 @@ main hr::before {
   text-align: center;
 }
 
+.footer-webring ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0;
+  li {
+    list-style: none;
+    margin: 0;
+  }
+}
+
 @media screen and (min-width: 62.5em) {
   .footer-widgets {
     grid-template-columns: 1fr 1fr 1fr;
@@ -1242,6 +1261,12 @@ main hr::before {
 
   .footer-secondary-right {
     margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  .page > footer {
+    padding: 3rem 1.25rem;
   }
 }
 

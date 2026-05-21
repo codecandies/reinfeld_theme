@@ -3,10 +3,10 @@
   <div class="footer">
     <div class="footer-widgets">
       <div class="footer-col">
+        <?php dynamic_sidebar("footer-1"); ?>
         <div id="site-footer-nav" class="footer-nav">
           <?php get_template_part("template-parts/main-navigation"); ?>
         </div>
-        <?php dynamic_sidebar("footer-1"); ?>
       </div>
       <div class="footer-col">
         <?php dynamic_sidebar("footer-2"); ?>
@@ -18,15 +18,11 @@
 
     <div class="footer-secondary">
       <div class="footer-secondary-left">
-        <?php get_template_part("template-parts/webring-navigation"); ?>
+        <?php get_template_part("template-parts/colophon"); ?>
       </div>
       <div class="footer-secondary-right">
         <?php get_template_part("template-parts/theme-toggle"); ?>
       </div>
-    </div>
-
-    <div class="footer-colophon">
-      <?php get_template_part("template-parts/colophon"); ?>
     </div>
   </div>
 </footer>

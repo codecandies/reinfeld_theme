@@ -336,6 +336,14 @@ msgstr "% Kommentare"
 msgid "Continue&nbsp;reading"
 msgstr "Weiterlesen"
 
+#: template-parts/content-single.php:32
+msgid "Topic: "
+msgstr "Thema: "
+
+#: template-parts/content-single.php:32
+msgid "and"
+msgstr "und"
+
 #: archive.php:20
 msgid "Topic"
 msgstr "Thema"

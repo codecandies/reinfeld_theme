@@ -204,6 +204,14 @@ msgstr "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps sear
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 
+#: template-parts/content-single.php:32
+msgid "Topic: "
+msgstr "Topic: "
+
+#: template-parts/content-single.php:32
+msgid "and"
+msgstr "and"
+
 #: template-parts/content.php:58
 msgid "Pages:"
 msgstr "Pages:"

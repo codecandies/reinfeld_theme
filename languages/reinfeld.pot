@@ -304,6 +304,14 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
+#: template-parts/content-single.php:32
+msgid "Topic: "
+msgstr ""
+
+#: template-parts/content-single.php:32
+msgid "and"
+msgstr ""
+
 #: page.php:38
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"

@@ -27,9 +27,21 @@ $layout = is_array($layout_array) ? esc_html($layout_array[0]) : "standard";
       <time datetime="<?php echo esc_attr(get_the_date("c")); ?>">
         <?php echo esc_html(get_the_date()); ?>
       </time>
-      <?php if (has_category()): ?>
+      <?php
+      $cats = get_the_category();
+      if ($cats):
+        $cat_links = array_map(function ($cat) {
+          return '<a href="' . esc_url(get_category_link($cat->term_id)) . '" rel="category tag">' . esc_html($cat->name) . '</a>';
+        }, $cats);
+        if (count($cat_links) > 1) {
+          $last = array_pop($cat_links);
+          $cat_list = implode(', ', $cat_links) . ' ' . __('and', 'reinfeld') . ' ' . $last;
+        } else {
+          $cat_list = $cat_links[0];
+        }
+      ?>
         <span class="categories">
-          <?php the_category(", "); ?>
+          <?php echo esc_html(__('Topic: ', 'reinfeld')) . $cat_list; ?>
         </span>
       <?php endif; ?>
     </div>

@@ -274,6 +274,63 @@ add_action("pre_get_posts", function (WP_Query $query) {
   }
 });
 
+/**
+ * Nachruf-Kennzeichnung
+ *
+ * Da „Nachruf" kein Standard-WordPress-Post-Format ist, wird es als einfaches
+ * Post-Meta-Feld gespeichert. Eine Checkbox erscheint in der Editor-Seitenleiste;
+ * ist sie gesetzt, fügt der post_class-Filter die Klasse „format-nachruf" hinzu.
+ */
+
+/**
+ * Vollbreit-Layout
+ *
+ * Setzt das bestehende Post-Meta-Feld „layout" auf „fullwidth". Dieses Feld
+ * wird bereits in index.php, archive.php und content-single.php ausgewertet,
+ * um das Bild vollbreit darzustellen und die entsprechende CSS-Klasse zu setzen.
+ */
+
+// Meta-Box im Editor registrieren
+add_action("add_meta_boxes", function () {
+  add_meta_box(
+    "reinfeld_vollbreit",
+    __("Vollbreit", "reinfeld"),
+    function ($post) {
+      wp_nonce_field("reinfeld_vollbreit_nonce", "reinfeld_vollbreit_nonce");
+      $checked = get_post_meta($post->ID, "layout", true) === "fullwidth";
+      echo '<label style="display:flex;align-items:center;gap:.5em">';
+      echo '<input type="checkbox" name="reinfeld_vollbreit" value="1"' . checked(true, $checked, false) . ">";
+      echo esc_html__("Dieser Artikel hat ein vollbreites Bild", "reinfeld");
+      echo "</label>";
+    },
+    "post",
+    "side",
+    "high",
+  );
+});
+
+// Meta beim Speichern persistieren
+add_action("save_post", function (int $post_id) {
+  if (
+    !isset($_POST["reinfeld_vollbreit_nonce"]) ||
+    !wp_verify_nonce($_POST["reinfeld_vollbreit_nonce"], "reinfeld_vollbreit_nonce")
+  ) {
+    return;
+  }
+  if (defined("DOING_AUTOSAVE") && DOING_AUTOSAVE) {
+    return;
+  }
+  if (!current_user_can("edit_post", $post_id)) {
+    return;
+  }
+
+  if (!empty($_POST["reinfeld_vollbreit"])) {
+    update_post_meta($post_id, "layout", "fullwidth");
+  } else {
+    delete_post_meta($post_id, "layout");
+  }
+});
+
 add_filter("reinfeld_avatar_class", function ($default) {
   $states = ["avatar", "avatar screaming", "avatar disbelief"];
 

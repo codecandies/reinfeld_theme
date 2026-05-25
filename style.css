@@ -1008,6 +1008,10 @@ a.continue {
   max-width: 100%;
 }
 
+.category-gestorben .entry-title::before {
+  content: "✝︎ ";
+}
+
 /* fullwidth article */
 article.fullwidth {
   margin-top: -2.5rem;

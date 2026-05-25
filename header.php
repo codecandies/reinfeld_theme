@@ -44,6 +44,4 @@
       </div>
     </header>
 
-    <main id="content" class="<?php echo is_home() || is_archive()
-      ? "archive"
-      : "article"; ?>"><!-- header.php: main -->
+    <main id="content" class="<?php echo is_single() || is_page() ? "article" : "archive"; ?>"><!-- header.php: main -->

@@ -999,7 +999,7 @@ a.continue {
   display: block;
   max-width: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: bottom;
   width: 100vw;
 }
 
@@ -1030,6 +1030,10 @@ article.fullwidth > header {
   color-scheme: dark;
 }
 
+article.fullwidth h1 {
+  font-size: clamp(2rem, 3.8vw, 4rem);
+}
+
 article.fullwidth figure.entry-image-wrapper {
   grid-column: 1/4;
   position: relative;
@@ -1037,10 +1041,7 @@ article.fullwidth figure.entry-image-wrapper {
 }
 
 article.fullwidth .article-image {
-  height: 100vh;
-  max-height: calc(
-    100vh - var(--head-space) - var(--adminbar-height) - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0)
-  );
+  aspect-ratio: 16/9;
 }
 
 article.fullwidth figure.entry-image-wrapper::after {

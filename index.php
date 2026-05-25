@@ -71,17 +71,24 @@ get_header(); ?>
         } ?>
 
         <?php
-        $excerpt = has_excerpt() ? get_the_excerpt() : wp_trim_words(get_the_excerpt(), 55, "...");
-        if ($excerpt) {
-          echo "<p>" . esc_html($excerpt);
-          echo '&nbsp;<a class="continue ui-button" href="' .
-            esc_url(get_permalink()) .
-            '" aria-hidden="true" tabindex="-1">' .
-            esc_html__("Continue&nbsp;reading", "reinfeld") .
-            "</a>";
-          echo "</p>";
-        }
-        ?>
+        // Bild- und Kurzmitteilungs-Posts werden auf Übersichtsseiten
+        // vollständig ausgegeben, ohne Auszug oder Weiterlesen-Button.
+        if (in_array(get_post_format(), ["image", "aside"], true)): ?>
+          <div class="entry-content">
+            <?php the_content(); ?>
+          </div>
+        <?php else:
+          $excerpt = has_excerpt() ? get_the_excerpt() : wp_trim_words(get_the_excerpt(), 55, "...");
+          if ($excerpt) {
+            echo "<p>" . esc_html($excerpt);
+            echo '&nbsp;<a class="continue ui-button" href="' .
+              esc_url(get_permalink()) .
+              '" aria-hidden="true" tabindex="-1">' .
+              esc_html__("Continue&nbsp;reading", "reinfeld") .
+              "</a>";
+            echo "</p>";
+          }
+        endif; ?>
       </article>
 
   <?php

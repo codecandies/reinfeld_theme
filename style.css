@@ -1163,7 +1163,7 @@ main hr::before {
 }
 
 /* Footer */
-.page > footer {
+.page > footer:not(.entry-footer) {
   background: var(--header-bg-end);
 }
 

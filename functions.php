@@ -115,7 +115,13 @@ if (!function_exists("reinfeld_scripts")):
     wp_enqueue_style("reinfeld-style", get_stylesheet_uri(), ["reinfeld-fonts"], REINFELD_VERSION);
 
     // Accessible hamburger navigation toggle
-    wp_enqueue_script("reinfeld-navigation", get_template_directory_uri() . "/assets/js/navigation.js", [], REINFELD_VERSION, true);
+    wp_enqueue_script(
+      "reinfeld-navigation",
+      get_template_directory_uri() . "/assets/js/navigation.js",
+      [],
+      REINFELD_VERSION,
+      true,
+    );
   }
   add_action("wp_enqueue_scripts", "reinfeld_scripts");
 endif;

@@ -61,6 +61,9 @@ if (!function_exists("reinfeld_setup")):
       "flex-height" => true,
     ]);
 
+    // Post formats
+    add_theme_support("post-formats", ["image", "aside"]);
+
     // Navigation menu locations
     register_nav_menus([
       "footer-links" => __("Navigation (Footer)", "reinfeld"),

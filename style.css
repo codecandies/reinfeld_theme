@@ -639,7 +639,6 @@ main img:not(.avatar) {
   filter: grayscale(var(--grayscale)) brightness(var(--brightness));
   max-width: 100%;
   height: auto;
-  width: 100%;
 }
 
 main img.inline-image {
@@ -1033,7 +1032,7 @@ article.fullwidth .article-image {
 }
 
 article.fullwidth figure.entry-image-wrapper::after {
-  background-image: linear-gradient(0deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 37%);
+  background-image: linear-gradient(0deg, rgb(0, 0, 0) 5%, rgba(0, 0, 0, 0) 45%);
   bottom: 0;
   content: "";
   display: block;

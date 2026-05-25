@@ -11,7 +11,7 @@ $layout = is_array($layout_array) ? esc_html($layout_array[0]) : "standard";
 ?>
 <!-- content-single.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class($layout); ?>>
-  <?php if (has_post_thumbnail()) {
+  <?php if (has_post_thumbnail() && $layout === "fullwidth") {
     $image = get_the_post_thumbnail(null, "large", [
       "class" => "entry-image article-image",
     ]);
@@ -30,20 +30,27 @@ $layout = is_array($layout_array) ? esc_html($layout_array[0]) : "standard";
       <?php
       $cats = get_the_category();
       if ($cats):
+
         $cat_links = array_map(function ($cat) {
-          return '<a href="' . esc_url(get_category_link($cat->term_id)) . '" rel="category tag">' . esc_html($cat->name) . '</a>';
+          return '<a href="' .
+            esc_url(get_category_link($cat->term_id)) .
+            '" rel="category tag">' .
+            esc_html($cat->name) .
+            "</a>";
         }, $cats);
         if (count($cat_links) > 1) {
           $last = array_pop($cat_links);
-          $cat_list = implode(', ', $cat_links) . ' ' . __('and', 'reinfeld') . ' ' . $last;
+          $cat_list = implode(", ", $cat_links) . " " . __("and", "reinfeld") . " " . $last;
         } else {
           $cat_list = $cat_links[0];
         }
-      ?>
+        ?>
         <span class="categories">
-          <?php echo esc_html(__('Topic: ', 'reinfeld')) . $cat_list; ?>
+          <?php echo esc_html(__("Topic: ", "reinfeld")) . $cat_list; ?>
         </span>
-      <?php endif; ?>
+      <?php
+      endif;
+      ?>
     </div>
   </header>
 

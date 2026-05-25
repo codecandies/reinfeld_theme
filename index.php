@@ -33,7 +33,12 @@ get_header(); ?>
 
     <?php
     foreach ($year_posts as $post):
-      setup_postdata($post); ?>
+
+      setup_postdata($post);
+      $layout_array = get_post_custom_values("layout");
+      $layout = is_array($layout_array) ? esc_html($layout_array[0]) : "standard";
+      ?>
+
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <header class="entry-header">
           <h3 class="entry-title">
@@ -52,7 +57,7 @@ get_header(); ?>
           </footer>
         <?php endif; ?>
 
-        <?php if (has_post_thumbnail()) {
+        <?php if (has_post_thumbnail() && $layout === "fullwidth") {
           $_thumb_id = get_post_thumbnail_id();
           $_thumb_alt = trim(get_post_meta($_thumb_id, "_wp_attachment_image_alt", true)) ?: get_the_title();
           the_post_thumbnail("large", [

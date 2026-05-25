@@ -706,7 +706,7 @@ main h2,
 main h3 {
   color: var(--body-color-lighted);
   font-size: 2.2rem;
-  font-weight: 900;
+  font-weight: 600;
   margin-top: 0;
   margin-bottom: 0.135rem;
   text-wrap: balance;

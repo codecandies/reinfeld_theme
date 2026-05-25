@@ -11,7 +11,7 @@ $layout = is_array($layout_array) ? esc_html($layout_array[0]) : "standard";
 ?>
 <!-- content-single.php -->
 <article id="post-<?php the_ID(); ?>" <?php post_class($layout); ?>>
-  <?php if (has_post_thumbnail() && $layout === "fullwidth") {
+  <?php if (has_post_thumbnail()) {
     $image = get_the_post_thumbnail(null, "large", [
       "class" => "entry-image article-image",
     ]);

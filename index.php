@@ -57,11 +57,15 @@ get_header(); ?>
           </footer>
         <?php endif; ?>
 
-        <?php if (has_post_thumbnail() && $layout === "fullwidth") {
+        <?php if (has_post_thumbnail()) {
           $_thumb_id = get_post_thumbnail_id();
           $_thumb_alt = trim(get_post_meta($_thumb_id, "_wp_attachment_image_alt", true)) ?: get_the_title();
+          $classes = ["entry-image teaser-image"];
+          if ($layout !== "fullwidth") {
+            $classes[] = "small-image";
+          }
           the_post_thumbnail("large", [
-            "class" => "entry-image teaser-image",
+            "class" => implode(" ", $classes),
             "alt" => $_thumb_alt,
           ]);
         } ?>

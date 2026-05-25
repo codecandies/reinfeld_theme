@@ -76,12 +76,20 @@ if (is_tag()) {
 
   wp_reset_postdata();
 
+  // Serien-Archive: älteste Beiträge zuerst → Jahre aufsteigend sortieren.
+  // Alle anderen Archive zeigen neueste zuerst → Jahre absteigend (krsort).
+  is_tax("series") ? ksort($posts_by_year) : krsort($posts_by_year);
+
   foreach ($posts_by_year as $year => $year_posts): ?>
     <h2><?php echo esc_html($year); ?></h2>
 
     <?php
     foreach ($year_posts as $post):
-      setup_postdata($post); ?>
+
+      setup_postdata($post);
+      $layout_array = get_post_custom_values("layout");
+      $layout = is_array($layout_array) ? esc_html($layout_array[0]) : "standard";
+      ?>
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <header class="entry-header">
           <h3 class="entry-title">
@@ -104,8 +112,12 @@ if (is_tag()) {
         <?php if (has_post_thumbnail()):
           $_thumb_id = get_post_thumbnail_id();
           $_thumb_alt = trim(get_post_meta($_thumb_id, "_wp_attachment_image_alt", true)) ?: get_the_title();
+          $classes = ["entry-image teaser-image"];
+          if ($layout !== "fullwidth") {
+            $classes[] = "small-image";
+          }
           the_post_thumbnail("large", [
-            "class" => "entry-image teaser-image",
+            "class" => implode(" ", $classes),
             "alt" => $_thumb_alt,
           ]);
         endif; ?>

@@ -252,6 +252,19 @@ endif; // End if().
  *   "avatar screaming" → schreiend
  *   "avatar disbelief" → ungläubig
  */
+/**
+ * Serien-Archiv: älteste Beiträge zuerst anzeigen.
+ *
+ * Auf den Übersichtsseiten der Taxonomie "series" wird die Sortierung
+ * auf aufsteigend (ASC) gesetzt, damit Leser die Serie von vorne lesen können.
+ */
+add_action("pre_get_posts", function (WP_Query $query) {
+  if (!is_admin() && $query->is_main_query() && $query->is_tax("series")) {
+    $query->set("order", "ASC");
+    $query->set("orderby", "date");
+  }
+});
+
 add_filter("reinfeld_avatar_class", function ($default) {
   $states = ["avatar", "avatar screaming", "avatar disbelief"];
 

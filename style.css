@@ -637,8 +637,20 @@ main figcaption {
 main img:not(.avatar) {
   display: block;
   filter: grayscale(var(--grayscale)) brightness(var(--brightness));
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
+  width: 100vw;
+}
+
+@media screen and (min-width: 37.5em) {
+  .entry-image.teaser-image.small-image {
+    aspect-ratio: 1 / 1;
+    float: left;
+    margin-block-start: 1.5em;
+    margin-inline-end: 1rem;
+    object-position: center;
+    width: 6.9em;
+  }
 }
 
 main img.inline-image {

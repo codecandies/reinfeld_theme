@@ -1200,6 +1200,7 @@ main hr::before {
 
 .footer-col {
   font-size: 1.2rem;
+  font-weight: 400;
   line-height: 1.6;
 }
 
@@ -1209,6 +1210,7 @@ main hr::before {
 
 .rf-wortwolke__title {
   font-size: 1.2rem;
+  font-weight: 500;
   margin: 0 0 0.75rem;
 }
 

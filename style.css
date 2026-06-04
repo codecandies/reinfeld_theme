@@ -1207,6 +1207,29 @@ main hr::before {
   padding: 1rem 0;
 }
 
+.rf-wortwolke__title {
+  font-size: 1.2rem;
+  margin: 0 0 0.75rem;
+}
+
+.rf-wortwolke__tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.6rem;
+  line-height: 1.4;
+}
+
+.rf-wortwolke__tags a {
+  text-decoration: none;
+}
+
+.rf-wortwolke__tags a:hover,
+.rf-wortwolke__tags a:focus-visible {
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+}
+
 .footer-secondary {
   display: flex;
   flex-direction: column-reverse;

@@ -179,6 +179,7 @@ if (!function_exists("reinfeld_register_blocks")):
   function reinfeld_register_blocks()
   {
     register_block_type(get_template_directory() . "/blocks/quotation");
+    register_block_type(get_template_directory() . "/blocks/wortwolke");
   }
   add_action("init", "reinfeld_register_blocks");
 endif;

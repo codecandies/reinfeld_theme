@@ -44,11 +44,51 @@ This section outlines the absolute order of operations. These rules have the hig
 
 ## Your role
 
-You are a developer working on the Reinfeld theme for WordPress. Your main responsibilities include writing clean, maintainable code, following best practices, and ensuring compatibility with ClassicPress. This includes understanding the ClassicPress architecture, adhering to coding standards, and writing documentation.
+You are a developer working on the Reinfeld theme for WordPress 6.x with full Gutenberg/Block Editor support. Your main responsibilities include writing clean, maintainable code, following best practices, and ensuring compatibility with WordPress 6.x. This includes understanding the block editor architecture, building dynamic blocks without a build step, adhering to WordPress coding standards, and writing documentation.
+
+## Development environment
+
+-   **Local URL**: `http://localhost:8080` (Docker Compose)
+-   **WP-CLI**: `docker compose exec wordpress wp <command> --allow-root`
+-   **PHP requirement**: 8.0+, WordPress 6.9+
+-   **Permalink structure**: `/%year%/%monthnum%/%day%/%postname%/`
+
+## Theme architecture
+
+### Widget areas
+Only `footer-1`, `footer-2`, and `footer-3` are registered. There is **no sidebar widget area** — do not reference `dynamic_sidebar('sidebar')` or similar.
+
+### Custom taxonomies
+Registered in `content/mu-plugins/00-couchblog-import.php` (not in the theme). All are public, non-hierarchical, and attached to `post`:
+
+| Taxonomy slug | Label    | Archive slug |
+|---------------|----------|--------------|
+| `post_tag`    | Schlagwörter | `/tag/<slug>/` |
+| `persons`     | Personen | `/personen/<slug>/` |
+| `locations`   | Orte     | `/orte/<slug>/` |
+| `series`      | Serien   | `/serie/<slug>/` |
+
+### Post meta conventions
+-   `layout = "fullwidth"` — signals a full-width image layout; evaluated in `index.php`, `archive.php`, and `content-single.php` via `post_class`.
+-   Series archives (`is_tax('series')`) are intentionally sorted **oldest-first (ASC)**; this is a deliberate UX decision to let readers follow a series from the beginning. Do not change this sort order.
+
+### JavaScript
+-   `jquery-migrate` is deregistered globally. Do not write code that depends on it.
+-   jQuery itself is moved to the footer. Prefer vanilla JS for new features.
 
 ## Documentation resources
 
-You may consider the [WordPress documentation](https://developer.wordpress.org/) and the [Theme Handbook](https://developer.wordpress.org/themes/) as a helpful resource.
+You may consider the [WordPress documentation](https://developer.wordpress.org/), the [Theme Handbook](https://developer.wordpress.org/themes/), and the [Block Editor Handbook](https://developer.wordpress.org/block-editor/) as helpful resources.
+
+## Block development
+
+This theme ships dynamic blocks under `blocks/<name>/`. The conventions are:
+
+-   **No build step**: Editor scripts are plain JavaScript IIFEs that access `window.wp.*` globals — no webpack, no JSX transpilation.
+-   **apiVersion 3**, `save: () => null`, `render: "file:./render.php"` for all dynamic blocks.
+-   `index.asset.php` is maintained by hand and lists the `wp-*` script dependencies.
+-   New blocks must be registered in `reinfeld_register_blocks()` in `functions.php` via `register_block_type(get_template_directory() . "/blocks/<name>")`.
+-   Block class names follow the `rf-<blockname>__<element>` BEM pattern.
 
 ## Coding Standards
 

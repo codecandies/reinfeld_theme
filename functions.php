@@ -73,23 +73,10 @@ if (!function_exists("reinfeld_setup")):
 endif;
 
 // Remove REST API Discovery-Link
-remove_action('wp_head', 'rest_output_link_wp_head');
+remove_action("wp_head", "rest_output_link_wp_head");
 
 // RSD Discovery-Link entfernen
-remove_action('wp_head', 'rsd_link');
-
-// XML-RPC komplett deaktivieren (wenn kein Jetpack o.ä. genutzt wird)
-add_filter('xmlrpc_enabled', '__return_false');
-
-// jQuery ins Footer verschieben und jquery-migrate deregistrieren
-add_action('wp_enqueue_scripts', function() {
-    if (!is_admin()) {
-        wp_scripts()->add_data('jquery', 'group', 1);
-        wp_scripts()->add_data('jquery-core', 'group', 1);
-        wp_scripts()->add_data('jquery-migrate', 'group', 1);
-        wp_deregister_script('jquery-migrate');
-    }
-});
+remove_action("wp_head", "rsd_link");
 
 /**
  * Flat nav walker — renders menu items as plain <a> tags without <ul>/<li>

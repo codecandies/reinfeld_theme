@@ -282,14 +282,6 @@ add_action("pre_get_posts", function (WP_Query $query) {
 });
 
 /**
- * Nachruf-Kennzeichnung
- *
- * Da „Nachruf" kein Standard-WordPress-Post-Format ist, wird es als einfaches
- * Post-Meta-Feld gespeichert. Eine Checkbox erscheint in der Editor-Seitenleiste;
- * ist sie gesetzt, fügt der post_class-Filter die Klasse „format-nachruf" hinzu.
- */
-
-/**
  * Vollbreit-Layout
  *
  * Setzt das bestehende Post-Meta-Feld „layout" auf „fullwidth". Dieses Feld

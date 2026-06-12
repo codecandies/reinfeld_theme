@@ -75,12 +75,12 @@ html:has(#mode-switcher input[value="dark"]:checked) {
   color-scheme: dark;
 }
 
-html:has(#mode-switcher input[value="dark"]:checked) img {
+html:has(#mode-switcher input[value="dark"]:checked) article:not(.format-image) img {
   filter: grayscale(100%) brightness(80%);
 }
 
 @media (prefers-color-scheme: dark) {
-  html:not(:has(#mode-switcher input[value="light"]:checked)) img {
+  html:not(:has(#mode-switcher input[value="light"]:checked)) article:not(.format-image) img {
     filter: grayscale(100%) brightness(80%);
   }
 }

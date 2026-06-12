@@ -1487,7 +1487,8 @@ button:hover {
   margin-bottom: 40px;
 }
 
-.comments-area ol {
+.comments-area ol,
+.comments-area ul{
   counter-reset: comments;
   list-style: none;
   margin: 0;

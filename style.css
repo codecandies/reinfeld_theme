@@ -1033,8 +1033,9 @@ article.fullwidth > header {
   align-self: end;
   display: flex;
   flex-direction: column;
-  padding-block: 1.5rem;
+  padding: 1.5rem;
   z-index: 1;
+  grid-column: 1/4;
 }
 
 article.fullwidth > header {

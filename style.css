@@ -648,12 +648,12 @@ main img:not(.avatar) {
 
 @media screen and (min-width: 37.5em) {
   .entry-image.teaser-image.small-image {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 3 / 2;
     float: left;
     margin-block-start: 1.5em;
     margin-inline-end: 1rem;
     object-position: center;
-    width: 6.9em;
+    width: 13.5rem;
   }
 }
 
@@ -733,6 +733,11 @@ main h3:has(+ p) {
 main p {
   font-size: 1.2rem;
   line-height: 1.6;
+}
+
+.entry-meta {
+  font-family: "Overpass", sans-serif;
+  font-weight: 300;
 }
 
 .teaser-image {

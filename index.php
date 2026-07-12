@@ -47,15 +47,20 @@ get_header(); ?>
             </a>
           </h3>
         </header>
-        <?php if (get_comments_number() > 0): ?>
-          <footer class="entry-meta">
+        <footer class="entry-meta">
+          <time datetime="<?php echo esc_attr(get_the_date("c")); ?>">
+          <?php echo esc_html(get_the_date()); ?>
+          </time>
+          <?php if (get_comments_number() > 0): ?>
+            &nbsp;&bull;&nbsp;<span>
             <?php comments_number(
               __("No comments", "reinfeld"),
               __("One comment", "reinfeld"),
               __("% comments", "reinfeld"),
             ); ?>
-          </footer>
-        <?php endif; ?>
+            </span>
+          <?php endif; ?>
+        </footer>
 
         <?php if (has_post_thumbnail()) {
           $_thumb_id = get_post_thumbnail_id();
